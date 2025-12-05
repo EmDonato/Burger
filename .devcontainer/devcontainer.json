@@ -1,0 +1,28 @@
+{
+    "name": "ROS2 Humble Dev",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--network=host",
+        "--tty",
+        "--interactive"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/root/ws,type=bind",
+    "workspaceFolder": "/root/ws",
+    "containerEnv": {
+        "FASTRTPS_DEFAULT_PROFILES_FILE": "/opt/ros/humble/share/ros2/ros2_default_profile.xml"
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}

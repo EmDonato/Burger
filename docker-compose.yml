@@ -1,0 +1,12 @@
+services:
+  ros2_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ros2_dev_img
+    container_name: ros2_dev
+    network_mode: host
+    volumes:
+      - ~/ros2_ws:/root/ws
+    stdin_open: true
+    tty: true
