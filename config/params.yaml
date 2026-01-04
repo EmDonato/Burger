@@ -1,0 +1,5 @@
+stm32_nucleo_f303re_driver:
+  ros__parameters:
+    port: "/dev/ttyACM0"
+    baudrate: 115200
+    frequency_ms: 5
