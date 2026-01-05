@@ -19,8 +19,7 @@ class StmDriver : public rclcpp::Node
 {
 public:
     StmDriver()
-    : Node("stm32_nucleo_f303re_driver"),
-      rx_buffer_(256)
+    : Node("stm32_nucleo_f303re_driver")
     {
         // =====================
         // PARAMETERS
@@ -105,6 +104,7 @@ private:
     int baudrate_;
     int frequency_ms_;
 
+
     // =====================
     // SERIAL
     // =====================
@@ -114,9 +114,11 @@ private:
     // =====================
     // BUFFERS
     // =====================
-    boost::circular_buffer<uint8_t> rx_buffer_(512);
+    boost::circular_buffer<uint8_t> rx_buffer_{512};
     uint8_t tmp_buf_[128];
 
+
+    msg_info msg_MCU;
     // =====================
     // ROS
     // =====================
@@ -133,9 +135,7 @@ private:
             // intenzionalmente vuoto
             // qui NON parsare: solo I/O
         }
-
-        // Qui dopo andrai con:
-        // parse_rx_buffer(rx_buffer_);
+        parse();
     }
 
     // =====================
@@ -159,6 +159,133 @@ private:
 
         return false; // niente altro da leggere
     }
+
+    void parse()
+{
+    while (!rx_buffer_.empty())
+    {
+        uint8_t byte = rx_buffer_.front();
+        rx_buffer_.pop_front();
+
+        switch (msg_MCU.state)
+        {
+        case parse_state::WAIT_HEADER1:
+            if (byte == 0xAA) {
+                msg_MCU.checksum = byte;
+                msg_MCU.state = parse_state::WAIT_HEADER2;
+            }
+            break;
+
+        case parse_state::WAIT_HEADER2:
+            if (byte == 0x55) {
+                msg_MCU.checksum ^= byte;
+                msg_MCU.state = parse_state::WAIT_TYPE;
+            } else {
+                msg_MCU.state = parse_state::WAIT_HEADER1;
+            }
+            break;
+
+        case parse_state::WAIT_TYPE:
+            msg_MCU.type = static_cast<msg_ID>(byte); 
+            msg_MCU.checksum ^= byte;
+            msg_MCU.state = parse_state::WAIT_LEN;
+            break;
+
+        case parse_state::WAIT_LEN:
+            msg_MCU.len = byte;
+            msg_MCU.checksum ^= byte;
+            msg_MCU.state = parse_state::WAIT_NUMB_ID;
+            msg_MCU.tmp_numb = 0;
+            msg_MCU.byte_idx = 0;
+            break;
+
+        case parse_state::WAIT_NUMB_ID:
+            msg_MCU.tmp_numb =
+                (msg_MCU.tmp_numb << 8) | byte;
+
+            msg_MCU.checksum ^= byte;
+            msg_MCU.byte_idx++;
+
+            if (msg_MCU.byte_idx == 4) {
+                check_and_upload_(msg_MCU.tmp_numb);
+                msg_MCU.byte_idx = 0;
+                msg_MCU.payload_idx = 0;
+                msg_MCU.state = parse_state::WAIT_PAYLOAD;
+            }
+            break;
+
+
+        case parse_state::WAIT_PAYLOAD:
+            if (msg_MCU.byte_idx == 0)
+                msg_MCU.payload[msg_MCU.payload_idx] = 0;
+
+            msg_MCU.payload[msg_MCU.payload_idx] =
+                (msg_MCU.payload[msg_MCU.payload_idx] << 8) | byte;
+
+            msg_MCU.checksum ^= byte;
+            msg_MCU.byte_idx++;
+
+            if (msg_MCU.byte_idx == 4) {
+                msg_MCU.byte_idx = 0;
+                msg_MCU.payload_idx++;
+
+                if (msg_MCU.payload_idx == msg_MCU.len) {
+                    msg_MCU.state = parse_state::WAIT_CHECKSUM;
+                }
+            }
+            break;
+
+
+        case parse_state::WAIT_CHECKSUM:
+            if (msg_MCU.checksum == byte && msg_MCU.valid) {
+                send();
+            }
+
+            msg_MCU.state = parse_state::WAIT_HEADER1;
+            msg_MCU.byte_idx = 0;
+            msg_MCU.payload_idx = 0;
+            msg_MCU.checksum = 0;
+            msg_MCU.valid = false;
+
+            break;
+        }
+    }
+}
+
+void check_and_upload_(uint32_t numb)
+{
+    switch (msg_MCU.type)
+    {
+    case msg_ID::IMU_ID:
+        if (is_newer(msg_MCU.numb_IMU, numb)) {
+            msg_MCU.numb_IMU = numb;
+            msg_MCU.valid = true;
+        }
+        break;
+
+    case msg_ID::ENC_ID:
+        if (is_newer(msg_MCU.numb_ENC, numb)) {
+            msg_MCU.numb_ENC = numb;
+            msg_MCU.valid = true;
+        }
+        break;
+
+    case msg_ID::HB_ID:
+        if (is_newer(msg_MCU.numb_HB, numb)) {
+            msg_MCU.numb_HB = numb;
+            msg_MCU.valid = true;
+        }
+        break;
+
+    default:
+        msg_MCU.valid = false;
+        break;
+    }
+}
+
+
+
+
 
     // =====================
     // BAUDRATE HELPER
