@@ -16,10 +16,9 @@ RUN apt-get update && apt-get install -y \
     ros-humble-teleop-twist-joy \
     ros-humble-teleop-twist-keyboard \
     ros-humble-rmw-fastrtps-cpp \
-    # OpenCV (versione di Ubuntu)
     libopencv-dev \
-    python3-opencv \
     libboost-dev \
+     python3-opencv \
     nano \
     iputils-ping \
     && rm -rf /var/lib/apt/lists/*

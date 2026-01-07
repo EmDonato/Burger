@@ -1,93 +1,58 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
-#include "sensor_msgs/msg/joint_state.hpp"
-#include "geometry_msgs/msg/twist.hpp"
-#include "stm32_nucleo_f303re_driver/msg/wheel_pwm.hpp"
 
-#include <chrono>
 #include <boost/circular_buffer.hpp>
+#include <chrono>
+#include <cstring>
 #include <vector>
 
-#include <fcntl.h>
-#include <unistd.h>
-#include <termios.h>
-#include <poll.h>
-#include <cerrno>
+#include <tf2/LinearMath/Quaternion.h>
 
+#include <fcntl.h>
+#include <poll.h>
+#include <termios.h>
+#include <unistd.h>
+
+// =====================
+// PROTOCOL CONSTANTS
+// =====================
+static constexpr uint8_t HDR1 = 0xAA;
+static constexpr uint8_t HDR2 = 0x55;
+
+enum MsgID : uint8_t {
+    IMU_ID = 0x01
+};
+
+enum class ParseState {
+    WAIT_HEADER1,
+    WAIT_HEADER2,
+    WAIT_TYPE,
+    WAIT_LEN,
+    WAIT_PAYLOAD,
+    WAIT_CHECKSUM
+};
 
 class StmDriver : public rclcpp::Node
 {
 public:
-    StmDriver()
-    : Node("stm32_nucleo_f303re_driver")
+    StmDriver() : Node("stm32_driver")
     {
-        // =====================
-        // PARAMETERS
-        // =====================
-        this->declare_parameter<std::string>("port", "/dev/ttyACM0");
-        this->declare_parameter<int>("baudrate", 115200);
-        this->declare_parameter<int>("frequency_ms", 5);
+        declare_parameter("port", "/dev/ttyACM0");
+        declare_parameter("baudrate", 115200);
 
-        this->get_parameter("port", port_);
-        this->get_parameter("baudrate", baudrate_);
-        this->get_parameter("frequency_ms", frequency_ms_);
+        get_parameter("port", port_);
+        get_parameter("baudrate", baudrate_);
 
-        // =====================
-        // OPEN SERIAL
-        // =====================
-        serial_fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
-        if (serial_fd_ < 0) {
-            perror("open serial");
-            throw std::runtime_error("Failed to open serial port");
-        }
+        open_serial_();
 
-        // =====================
-        // TERMIOS CONFIG
-        // =====================
-        termios tty{};
-        if (tcgetattr(serial_fd_, &tty) != 0) {
-            perror("tcgetattr");
-            throw std::runtime_error("tcgetattr failed");
-        }
-
-        cfsetispeed(&tty, baud_to_flag(baudrate_));
-        cfsetospeed(&tty, baud_to_flag(baudrate_));
-
-        tty.c_cflag |= (CLOCAL | CREAD);
-        tty.c_cflag &= ~CSIZE;
-        tty.c_cflag |= CS8;
-        tty.c_cflag &= ~PARENB;
-        tty.c_cflag &= ~CSTOPB;
-        tty.c_cflag &= ~CRTSCTS;
-
-        tty.c_lflag = 0;
-        tty.c_iflag = 0;
-        tty.c_oflag = 0;
-
-        tty.c_cc[VMIN]  = 0;
-        tty.c_cc[VTIME] = 0;
-
-        if (tcsetattr(serial_fd_, TCSANOW, &tty) != 0) {
-            perror("tcsetattr");
-            throw std::runtime_error("tcsetattr failed");
-        }
-
-        // =====================
-        // POLL SETUP
-        // =====================
-        pfd_.fd = serial_fd_;
-        pfd_.events = POLLIN;
-
-        // =====================
-        // ROS INTERFACES
-        // =====================
-        imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>(
+        imu_pub_ = create_publisher<sensor_msgs::msg::Imu>(
             "imu", rclcpp::SensorDataQoS());
 
-        timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(frequency_ms_),
-            std::bind(&StmDriver::read_serial, this)
-        );
+        timer_ = create_wall_timer(
+            std::chrono::milliseconds(5),
+            std::bind(&StmDriver::read_serial_, this));
+
+        RCLCPP_INFO(get_logger(), "STM32 IMU driver started");
     }
 
     ~StmDriver()
@@ -98,27 +63,25 @@ public:
 
 private:
     // =====================
-    // PARAMETERS
+    // SERIAL
     // =====================
     std::string port_;
     int baudrate_;
-    int frequency_ms_;
-
-
-    // =====================
-    // SERIAL
-    // =====================
     int serial_fd_{-1};
     pollfd pfd_{};
 
-    // =====================
-    // BUFFERS
-    // =====================
-    boost::circular_buffer<uint8_t> rx_buffer_{512};
     uint8_t tmp_buf_[128];
+    boost::circular_buffer<uint8_t> rx_buffer_{512};
 
+    // =====================
+    // PARSER
+    // =====================
+    ParseState state_{ParseState::WAIT_HEADER1};
+    uint8_t msg_type_{0};
+    uint8_t msg_len_{0};
+    uint8_t checksum_{0};
+    std::vector<uint8_t> payload_;
 
-    msg_info msg_MCU;
     // =====================
     // ROS
     // =====================
@@ -126,178 +89,174 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
 
     // =====================
-    // TIMER CALLBACK
+    // SERIAL SETUP
     // =====================
-    void read_serial()
+    void open_serial_()
     {
-        // Consuma TUTTO quello che il kernel ha bufferizzato
-        while (poll_and_read_()) {
-            // intenzionalmente vuoto
-            // qui NON parsare: solo I/O
-        }
-        parse();
+        serial_fd_ = open(port_.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
+        if (serial_fd_ < 0)
+            throw std::runtime_error("Failed to open serial port");
+
+        termios tty{};
+        tcgetattr(serial_fd_, &tty);
+
+        cfsetispeed(&tty, B115200);
+        cfsetospeed(&tty, B115200);
+
+        tty.c_cflag |= (CLOCAL | CREAD);
+        tty.c_cflag &= ~CSIZE;
+        tty.c_cflag |= CS8;
+        tty.c_cflag &= ~(PARENB | CSTOPB | CRTSCTS);
+
+        tty.c_lflag = 0;
+        tty.c_iflag = 0;
+        tty.c_oflag = 0;
+        tty.c_cc[VMIN]  = 0;
+        tty.c_cc[VTIME] = 0;
+
+        tcsetattr(serial_fd_, TCSANOW, &tty);
+
+        pfd_.fd = serial_fd_;
+        pfd_.events = POLLIN;
     }
 
     // =====================
-    // POLL + READ
+    // READ SERIAL
     // =====================
-    bool poll_and_read_()
+    void read_serial_()
     {
-        int ret = poll(&pfd_, 1, 0);  // non blocca
-
-        if (ret > 0 && (pfd_.revents & POLLIN)) {
-
+        while (poll(&pfd_, 1, 0) > 0) {
             ssize_t n = read(serial_fd_, tmp_buf_, sizeof(tmp_buf_));
-
             if (n > 0) {
-                for (ssize_t i = 0; i < n; ++i) {
+                for (ssize_t i = 0; i < n; ++i)
                     rx_buffer_.push_back(tmp_buf_[i]);
-                }
-                return true;   // c'era dato → riprova
             }
         }
-
-        return false; // niente altro da leggere
+        parse_();
     }
-
-    void parse()
-{
-    while (!rx_buffer_.empty())
-    {
-        uint8_t byte = rx_buffer_.front();
-        rx_buffer_.pop_front();
-
-        switch (msg_MCU.state)
-        {
-        case parse_state::WAIT_HEADER1:
-            if (byte == 0xAA) {
-                msg_MCU.checksum = byte;
-                msg_MCU.state = parse_state::WAIT_HEADER2;
-            }
-            break;
-
-        case parse_state::WAIT_HEADER2:
-            if (byte == 0x55) {
-                msg_MCU.checksum ^= byte;
-                msg_MCU.state = parse_state::WAIT_TYPE;
-            } else {
-                msg_MCU.state = parse_state::WAIT_HEADER1;
-            }
-            break;
-
-        case parse_state::WAIT_TYPE:
-            msg_MCU.type = static_cast<msg_ID>(byte); 
-            msg_MCU.checksum ^= byte;
-            msg_MCU.state = parse_state::WAIT_LEN;
-            break;
-
-        case parse_state::WAIT_LEN:
-            msg_MCU.len = byte;
-            msg_MCU.checksum ^= byte;
-            msg_MCU.state = parse_state::WAIT_NUMB_ID;
-            msg_MCU.tmp_numb = 0;
-            msg_MCU.byte_idx = 0;
-            break;
-
-        case parse_state::WAIT_NUMB_ID:
-            msg_MCU.tmp_numb =
-                (msg_MCU.tmp_numb << 8) | byte;
-
-            msg_MCU.checksum ^= byte;
-            msg_MCU.byte_idx++;
-
-            if (msg_MCU.byte_idx == 4) {
-                check_and_upload_(msg_MCU.tmp_numb);
-                msg_MCU.byte_idx = 0;
-                msg_MCU.payload_idx = 0;
-                msg_MCU.state = parse_state::WAIT_PAYLOAD;
-            }
-            break;
-
-
-        case parse_state::WAIT_PAYLOAD:
-            if (msg_MCU.byte_idx == 0)
-                msg_MCU.payload[msg_MCU.payload_idx] = 0;
-
-            msg_MCU.payload[msg_MCU.payload_idx] =
-                (msg_MCU.payload[msg_MCU.payload_idx] << 8) | byte;
-
-            msg_MCU.checksum ^= byte;
-            msg_MCU.byte_idx++;
-
-            if (msg_MCU.byte_idx == 4) {
-                msg_MCU.byte_idx = 0;
-                msg_MCU.payload_idx++;
-
-                if (msg_MCU.payload_idx == msg_MCU.len) {
-                    msg_MCU.state = parse_state::WAIT_CHECKSUM;
-                }
-            }
-            break;
-
-
-        case parse_state::WAIT_CHECKSUM:
-            if (msg_MCU.checksum == byte && msg_MCU.valid) {
-                send();
-            }
-
-            msg_MCU.state = parse_state::WAIT_HEADER1;
-            msg_MCU.byte_idx = 0;
-            msg_MCU.payload_idx = 0;
-            msg_MCU.checksum = 0;
-            msg_MCU.valid = false;
-
-            break;
-        }
-    }
-}
-
-void check_and_upload_(uint32_t numb)
-{
-    switch (msg_MCU.type)
-    {
-    case msg_ID::IMU_ID:
-        if (is_newer(msg_MCU.numb_IMU, numb)) {
-            msg_MCU.numb_IMU = numb;
-            msg_MCU.valid = true;
-        }
-        break;
-
-    case msg_ID::ENC_ID:
-        if (is_newer(msg_MCU.numb_ENC, numb)) {
-            msg_MCU.numb_ENC = numb;
-            msg_MCU.valid = true;
-        }
-        break;
-
-    case msg_ID::HB_ID:
-        if (is_newer(msg_MCU.numb_HB, numb)) {
-            msg_MCU.numb_HB = numb;
-            msg_MCU.valid = true;
-        }
-        break;
-
-    default:
-        msg_MCU.valid = false;
-        break;
-    }
-}
-
-
-
-
 
     // =====================
-    // BAUDRATE HELPER
+    // PARSER FSM
     // =====================
-    speed_t baud_to_flag(int baud)
+    void parse_()
     {
-        switch (baud) {
-            case 9600:   return B9600;
-            case 57600:  return B57600;
-            case 115200: return B115200;
-            case 230400: return B230400;
-            default:     return B115200;
+        while (!rx_buffer_.empty()) {
+            uint8_t c = rx_buffer_.front();
+            rx_buffer_.pop_front();
+
+            switch (state_) {
+
+            case ParseState::WAIT_HEADER1:
+                if (c == HDR1) {
+                    checksum_ = c;
+                    state_ = ParseState::WAIT_HEADER2;
+                }
+                break;
+
+            case ParseState::WAIT_HEADER2:
+                if (c == HDR2) {
+                    checksum_ ^= c;
+                    state_ = ParseState::WAIT_TYPE;
+                } else {
+                    state_ = ParseState::WAIT_HEADER1;
+                }
+                break;
+
+            case ParseState::WAIT_TYPE:
+                msg_type_ = c;
+                checksum_ ^= c;
+                state_ = ParseState::WAIT_LEN;
+                break;
+
+            case ParseState::WAIT_LEN:
+                msg_len_ = c;
+                payload_.clear();
+                checksum_ ^= c;
+                state_ = ParseState::WAIT_PAYLOAD;
+                break;
+
+            case ParseState::WAIT_PAYLOAD:
+                payload_.push_back(c);
+                checksum_ ^= c;
+
+                if (payload_.size() >= msg_len_)
+                    state_ = ParseState::WAIT_CHECKSUM;
+                break;
+
+            case ParseState::WAIT_CHECKSUM:
+                if (checksum_ == c) {
+                    handle_message_();
+                } else {
+                    RCLCPP_ERROR(get_logger(),
+                        "Checksum error (type=0x%02X)", msg_type_);
+                }
+                state_ = ParseState::WAIT_HEADER1;
+                break;
+            }
         }
+    }
+
+    // =====================
+    // MESSAGE HANDLER
+    // =====================
+    void handle_message_()
+    {
+        if (msg_type_ != IMU_ID)
+            return;
+
+        constexpr size_t EXPECTED_LEN =
+            sizeof(uint32_t) + 15 * sizeof(float);
+
+        if (payload_.size() != EXPECTED_LEN)
+            return;
+
+        uint32_t id;
+        float d[15];
+
+        std::memcpy(&id, payload_.data(), 4);
+        std::memcpy(d, payload_.data() + 4, 15 * sizeof(float));
+
+        float roll = d[0], pitch = d[1], yaw = d[2];
+        float ax = d[3], ay = d[4], az = d[5];
+        float gx = d[6], gy = d[7], gz = d[8];
+        float mx = d[9], my = d[10], mz = d[11];
+        float bx = d[12], by = d[13], bz = d[14];
+
+        sensor_msgs::msg::Imu imu{};
+        imu.header.stamp = now();
+        imu.header.frame_id = "imu_link";
+
+        imu.orientation_covariance[0] = -1;
+        imu.angular_velocity_covariance[0] = -1;
+        imu.linear_acceleration_covariance[0] = -1;
+
+        tf2::Quaternion q;
+        q.setRPY(roll, pitch, yaw);
+
+        imu.orientation.x = q.x();
+        imu.orientation.y = q.y();
+        imu.orientation.z = q.z();
+        imu.orientation.w = q.w();
+
+        imu.angular_velocity.x = gx;
+        imu.angular_velocity.y = gy;
+        imu.angular_velocity.z = gz;
+
+        imu.linear_acceleration.x = ax;
+        imu.linear_acceleration.y = ay;
+        imu.linear_acceleration.z = az;
+
+        imu_pub_->publish(imu);
     }
 };
+
+// =====================
+// MAIN
+// =====================
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<StmDriver>());
+    rclcpp::shutdown();
+    return 0;
+}

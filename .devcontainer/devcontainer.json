@@ -7,6 +7,7 @@
     "runArgs": [
         "--network=host",
         "--tty",
+        "--privileged",
         "--interactive"
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/ws,type=bind",
