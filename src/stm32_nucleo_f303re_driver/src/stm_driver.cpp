@@ -1,6 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
-
+#include "geometry_msgs/msg/twist.hpp"
+#include "sensor_msgs/msg/magnetic_field.hpp"
 #include <boost/circular_buffer.hpp>
 #include <chrono>
 #include <cstring>
@@ -20,7 +21,12 @@ static constexpr uint8_t HDR1 = 0xAA;
 static constexpr uint8_t HDR2 = 0x55;
 
 enum MsgID : uint8_t {
-    IMU_ID = 0x01
+    IMU_ID     = 0x01,
+    ENC_ID     = 0x02,
+    CMD_VEL_ID = 0x03,
+    ARM_ID     = 0x04,
+    HB_ID      = 0x05,
+    STRING_ID  = 0x06
 };
 
 enum class ParseState {
@@ -47,6 +53,10 @@ public:
 
         imu_pub_ = create_publisher<sensor_msgs::msg::Imu>(
             "imu", rclcpp::SensorDataQoS());
+        enc_pub_ = create_publisher<geometry_msgs::msg::Twist>(
+            "enc/twist", rclcpp::SensorDataQoS());
+        mag_pub_ = create_publisher<sensor_msgs::msg::MagneticField>(
+            "magnetometer", rclcpp::SensorDataQoS());
 
         timer_ = create_wall_timer(
             std::chrono::milliseconds(5),
@@ -86,6 +96,8 @@ private:
     // ROS
     // =====================
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr mag_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr enc_pub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     // =====================
@@ -201,52 +213,95 @@ private:
     // =====================
     void handle_message_()
     {
-        if (msg_type_ != IMU_ID)
-            return;
 
-        constexpr size_t EXPECTED_LEN =
-            sizeof(uint32_t) + 15 * sizeof(float);
 
-        if (payload_.size() != EXPECTED_LEN)
-            return;
 
-        uint32_t id;
-        float d[15];
+        switch (msg_type_)
+        {
+        case IMU_ID :
+        {
+            constexpr size_t EXPECTED_LEN =
+                sizeof(uint32_t) + 15 * sizeof(float);
 
-        std::memcpy(&id, payload_.data(), 4);
-        std::memcpy(d, payload_.data() + 4, 15 * sizeof(float));
+            if (payload_.size() != EXPECTED_LEN)
+                return;
 
-        float roll = d[0], pitch = d[1], yaw = d[2];
-        float ax = d[3], ay = d[4], az = d[5];
-        float gx = d[6], gy = d[7], gz = d[8];
-        float mx = d[9], my = d[10], mz = d[11];
-        float bx = d[12], by = d[13], bz = d[14];
+            uint32_t id;
+            float d[15];
 
-        sensor_msgs::msg::Imu imu{};
-        imu.header.stamp = now();
-        imu.header.frame_id = "imu_link";
+            std::memcpy(&id, payload_.data(), 4);
+            std::memcpy(d, payload_.data() + 4, 15 * sizeof(float));
 
-        imu.orientation_covariance[0] = -1;
-        imu.angular_velocity_covariance[0] = -1;
-        imu.linear_acceleration_covariance[0] = -1;
+            float roll = d[0], pitch = d[1], yaw = d[2];
+            float ax = d[3], ay = d[4], az = d[5];
+            float gx = d[6], gy = d[7], gz = d[8];
+            float mx = d[9], my = d[10], mz = d[11];
+            float bx = d[12], by = d[13], bz = d[14];
 
-        tf2::Quaternion q;
-        q.setRPY(roll, pitch, yaw);
+            sensor_msgs::msg::Imu imu{};
+            imu.header.stamp = now();
+            imu.header.frame_id = "imu_link";
 
-        imu.orientation.x = q.x();
-        imu.orientation.y = q.y();
-        imu.orientation.z = q.z();
-        imu.orientation.w = q.w();
+            sensor_msgs::msg::MagneticField mag{};
+            mag.header.stamp = now();
+            mag.header.frame_id = "mag_link";
 
-        imu.angular_velocity.x = gx;
-        imu.angular_velocity.y = gy;
-        imu.angular_velocity.z = gz;
+            mag.magnetic_field.x = mx;
+            mag.magnetic_field.y = my;
+            mag.magnetic_field.z = mz;
+            mag.magnetic_field_covariance[0] = -1.0;
 
-        imu.linear_acceleration.x = ax;
-        imu.linear_acceleration.y = ay;
-        imu.linear_acceleration.z = az;
+            imu.orientation_covariance[0] = -1;
+            imu.angular_velocity_covariance[0] = -1;
+            imu.linear_acceleration_covariance[0] = -1;
 
-        imu_pub_->publish(imu);
+            tf2::Quaternion q;
+            q.setRPY(roll, pitch, yaw);
+
+            imu.orientation.x = q.x();
+            imu.orientation.y = q.y();
+            imu.orientation.z = q.z();
+            imu.orientation.w = q.w();
+
+            imu.angular_velocity.x = gx;
+            imu.angular_velocity.y = gy;
+            imu.angular_velocity.z = gz;
+
+            imu.linear_acceleration.x = ax;
+            imu.linear_acceleration.y = ay;
+            imu.linear_acceleration.z = az;
+
+            imu_pub_->publish(imu);
+            mag_pub_->publish(mag);
+            break;
+        }
+
+        case ENC_ID :
+        {
+            float d[4];
+            std::memcpy(d, payload_.data() + 4, 4 * sizeof(float));
+
+            float vx = d[0], vy = 0.0f, vz = 0.0f;
+            float wx = 0.0f, wy = 0.0f, wz = d[1]; 
+
+            float rpm_vl = d[2], rpm_vr = d[3];
+            geometry_msgs::msg::Twist enc_msg{};
+
+            enc_msg.linear.x = vx;
+            enc_msg.linear.y = vy;
+            enc_msg.linear.z = vz;
+
+            enc_msg.angular.x = wx;
+            enc_msg.angular.y = wy;
+            enc_msg.angular.z = wz;
+            
+            enc_pub_->publish(enc_msg);
+            break;
+        }
+
+        default:
+            break;
+        }
     }
 };
 
