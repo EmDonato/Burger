@@ -1,0 +1,10 @@
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/uninstall.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/joy_teleop_twist_ref_uninstall.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/joy_vel_ref.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/test.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/edit_cache.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/rebuild_cache.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/list_install_components.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/install.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/install/local.dir
+/root/ws/src/build/joy_teleop_twist_ref/CMakeFiles/install/strip.dir

@@ -1,12 +1,15 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 #include "geometry_msgs/msg/twist.hpp"
+#include "geometry_msgs/msg/vector3.hpp"
 #include "sensor_msgs/msg/magnetic_field.hpp"
+#include "std_msgs/msg/bool.hpp"
 #include <boost/circular_buffer.hpp>
 #include <chrono>
 #include <cstring>
 #include <vector>
 
+#include "parsing_types.hpp"
 #include <tf2/LinearMath/Quaternion.h>
 
 #include <fcntl.h>
@@ -14,29 +17,6 @@
 #include <termios.h>
 #include <unistd.h>
 
-// =====================
-// PROTOCOL CONSTANTS
-// =====================
-static constexpr uint8_t HDR1 = 0xAA;
-static constexpr uint8_t HDR2 = 0x55;
-
-enum MsgID : uint8_t {
-    IMU_ID     = 0x01,
-    ENC_ID     = 0x02,
-    CMD_VEL_ID = 0x03,
-    ARM_ID     = 0x04,
-    HB_ID      = 0x05,
-    STRING_ID  = 0x06
-};
-
-enum class ParseState {
-    WAIT_HEADER1,
-    WAIT_HEADER2,
-    WAIT_TYPE,
-    WAIT_LEN,
-    WAIT_PAYLOAD,
-    WAIT_CHECKSUM
-};
 
 class StmDriver : public rclcpp::Node
 {
@@ -57,12 +37,13 @@ public:
             "enc/twist", rclcpp::SensorDataQoS());
         mag_pub_ = create_publisher<sensor_msgs::msg::MagneticField>(
             "magnetometer", rclcpp::SensorDataQoS());
-
+        arm_pub_ = create_publisher<std_msgs::msg::Bool>(
+            "robot_status/is_armed", rclcpp::QoS(rclcpp::KeepLast(1)).transient_local());
         timer_ = create_wall_timer(
             std::chrono::milliseconds(5),
             std::bind(&StmDriver::read_serial_, this));
 
-        RCLCPP_INFO(get_logger(), "STM32 IMU driver started");
+        RCLCPP_INFO(get_logger(), "STM32 driver started");
     }
 
     ~StmDriver()
@@ -98,6 +79,9 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
     rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr mag_pub_;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr enc_pub_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr arm_pub_;
+    bool last_arm_state_ = false;
+
     rclcpp::TimerBase::SharedPtr timer_;
 
     // =====================
@@ -236,7 +220,7 @@ private:
             float ax = d[3], ay = d[4], az = d[5];
             float gx = d[6], gy = d[7], gz = d[8];
             float mx = d[9], my = d[10], mz = d[11];
-            float bx = d[12], by = d[13], bz = d[14];
+            //float bx = d[12], by = d[13], bz = d[14];
 
             sensor_msgs::msg::Imu imu{};
             imu.header.stamp = now();
@@ -298,7 +282,24 @@ private:
             enc_pub_->publish(enc_msg);
             break;
         }
+        case HB_ID :
+        {
+            if (payload_.size() < 1) return;
 
+            bool current_arm_state = (payload_[0] == 1);
+            if(last_arm_state_ == current_arm_state) break;
+            last_arm_state_ = current_arm_state;
+            auto msg = std_msgs::msg::Bool();
+            msg.data = current_arm_state;
+            arm_pub_->publish(msg);
+
+            if (current_arm_state != last_arm_state_) {
+                RCLCPP_INFO(this->get_logger(), "State changed: %s", 
+                            current_arm_state ? "ARMED" : "DISARMED");
+                last_arm_state_ = current_arm_state;
+            }
+            break;
+        }
         default:
             break;
         }

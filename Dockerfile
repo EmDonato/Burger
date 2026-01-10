@@ -16,13 +16,18 @@ RUN apt-get update && apt-get install -y \
     ros-humble-teleop-twist-joy \
     ros-humble-teleop-twist-keyboard \
     ros-humble-rmw-fastrtps-cpp \
+    ros-humble-joy-teleop\
     libopencv-dev \
     libboost-dev \
      python3-opencv \
     nano \
+    mkdir -p /opt/ros/humble/share/ros2/ && \
+    touch /opt/ros/humble/share/ros2/ros2_default_profile.xml\
     iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+    
 WORKDIR /root/ws
 
 ENTRYPOINT ["/ros_entrypoint.sh"]

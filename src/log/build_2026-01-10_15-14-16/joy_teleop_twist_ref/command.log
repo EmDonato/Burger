@@ -1,0 +1,4 @@
+Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref
+Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref

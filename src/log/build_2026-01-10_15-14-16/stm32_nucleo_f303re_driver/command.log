@@ -1,0 +1,4 @@
+Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver
+Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver

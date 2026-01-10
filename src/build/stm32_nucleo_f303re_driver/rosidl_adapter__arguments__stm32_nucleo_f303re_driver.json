@@ -1,0 +1,6 @@
+{
+  "package_name": "stm32_nucleo_f303re_driver",
+  "non_idl_tuples": [
+    "/root/ws/src/stm32_nucleo_f303re_driver:msg/WheelPwm.msg"
+  ]
+}

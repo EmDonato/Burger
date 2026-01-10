@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-eb789f1f9acb5f6c9311.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "stm32_nucleo_f303re_driver__py",
+					"jsonFile" : "directory-stm32_nucleo_f303re_driver__py-82a7fff86689de8ace7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ws/src/build/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "stm32_nucleo_f303re_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_stm32_nucleo_f303re_driver_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_stm32_nucleo_f303re_driver_egg-7a99745b8984bcb430e7.json",
+					"name" : "ament_cmake_python_build_stm32_nucleo_f303re_driver_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_stm32_nucleo_f303re_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_stm32_nucleo_f303re_driver-7bd5e9558618363ab06a.json",
+					"name" : "ament_cmake_python_copy_stm32_nucleo_f303re_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver-3f9f0b211a2c29dc7650.json",
+					"name" : "stm32_nucleo_f303re_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__cpp-52a4b4832c26afbf2259.json",
+					"name" : "stm32_nucleo_f303re_driver__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "stm32_nucleo_f303re_driver__py::@287b7d8af90bf3dcb645",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__py-0619902275359e971ed7.json",
+					"name" : "stm32_nucleo_f303re_driver__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_generator_c-1576aea6e9efc3d06bbd.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_generator_py-ec0ca09f33e91eb3a601.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_c-c007ba749b7f7cc3a5d0.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext-49936f2d4e4c4340b283.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_cpp-841a24b137617a6a57d3.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c-0b7d4afa7c312cb1c195.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext-519953c479ebb2b25046.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp-6b93dd1e7fdd4fcaa915.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c-47ab8c6839d34db0027d.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext-dfd500445e9ce38f5718.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp-3c78dab9abf0223dde5c.json",
+					"name" : "stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm32_nucleo_f303re_driver_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm32_nucleo_f303re_driver_uninstall-f0d9b435afe83d11204d.json",
+					"name" : "stm32_nucleo_f303re_driver_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stm_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stm_driver-c034a8cc2e6db3dd0ddf.json",
+					"name" : "stm_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-810b008789ca06d7f904.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ws/src/build/stm32_nucleo_f303re_driver",
+		"source" : "/root/ws/src/stm32_nucleo_f303re_driver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
