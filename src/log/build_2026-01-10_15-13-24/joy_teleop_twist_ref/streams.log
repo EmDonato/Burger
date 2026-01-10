@@ -1,0 +1,71 @@
+[0.031s] Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/joy_teleop_twist_ref -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/joy_teleop_twist_ref
+[0.246s] -- The C compiler identification is GNU 11.4.0
+[0.489s] -- The CXX compiler identification is GNU 11.4.0
+[0.542s] -- Detecting C compiler ABI info
+[0.787s] -- Detecting C compiler ABI info - done
+[0.817s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.819s] -- Detecting C compile features
+[0.824s] -- Detecting C compile features - done
+[0.831s] -- Detecting CXX compiler ABI info
+[1.164s] -- Detecting CXX compiler ABI info - done
+[1.172s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.172s] -- Detecting CXX compile features
+[1.173s] -- Detecting CXX compile features - done
+[1.177s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.507s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.768s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[1.843s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.849s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.866s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.896s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.928s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.022s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.026s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.164s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.223s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.296s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.311s] -- Looking for pthread.h
+[2.470s] -- Looking for pthread.h - found
+[2.471s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.621s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.624s] -- Found Threads: TRUE  
+[2.729s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.754s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.972s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.974s] -- Configured cppcheck include dirs: 
+[2.975s] -- Configured cppcheck exclude dirs and/or files: 
+[2.975s] -- Added test 'lint_cmake' to check CMake code style
+[2.980s] -- Added test 'uncrustify' to check C / C++ code style
+[2.983s] -- Configured uncrustify additional arguments: 
+[2.983s] -- Added test 'xmllint' to check XML markup files
+[2.984s] -- Configuring done
+[3.004s] -- Generating done
+[3.009s] -- Build files have been written to: /root/ws/src/build/joy_teleop_twist_ref
+[3.051s] Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/joy_teleop_twist_ref -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/joy_teleop_twist_ref
+[3.052s] Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+[3.160s] [ 50%] [32mBuilding CXX object CMakeFiles/joy_vel_ref.dir/src/joy_vel_ref.cpp.o[0m
+[26.599s] [100%] [32m[1mLinking CXX executable joy_vel_ref[0m
+[27.724s] [100%] Built target joy_vel_ref
+[27.742s] Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+[27.745s] Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref
+[27.761s] -- Install configuration: ""
+[27.761s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/lib/joy_teleop_twist_ref/joy_vel_ref
+[27.765s] -- Set runtime path of "/root/ws/src/install/joy_teleop_twist_ref/lib/joy_teleop_twist_ref/joy_vel_ref" to ""
+[27.766s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/include
+[27.766s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/include/joy_teleop_twist_ref
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/package_run_dependencies/joy_teleop_twist_ref
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/parent_prefix_path/joy_teleop_twist_ref
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.sh
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.dsv
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.sh
+[27.767s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.dsv
+[27.768s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.bash
+[27.768s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.sh
+[27.769s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.zsh
+[27.769s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.dsv
+[27.769s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.dsv
+[27.769s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/packages/joy_teleop_twist_ref
+[27.769s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig.cmake
+[27.770s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig-version.cmake
+[27.770s] -- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.xml
+[27.775s] Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref

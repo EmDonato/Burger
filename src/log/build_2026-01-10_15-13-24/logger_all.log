@@ -1,0 +1,203 @@
+[0.203s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.204s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7fffac3a6590>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fffac3a5f00>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fffac3a5f00>>, mixin_verb=('build',))
+[0.465s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.467s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.468s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.469s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.470s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.470s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.470s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.470s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.470s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.470s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ws/src'
+[0.470s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.471s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.498s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.498s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.498s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.498s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.498s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extension 'ignore_ament_install'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extensions ['colcon_pkg']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extension 'colcon_pkg'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extensions ['colcon_meta']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extension 'colcon_meta'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extensions ['ros']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(joy_teleop_twist_ref) by extension 'ros'
+[0.507s] DEBUG:colcon.colcon_core.package_identification:Package 'joy_teleop_twist_ref' with type 'ros.ament_cmake' and name 'joy_teleop_twist_ref'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extension 'ignore'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extension 'ignore_ament_install'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extensions ['colcon_pkg']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extension 'colcon_pkg'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extensions ['colcon_meta']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extension 'colcon_meta'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extensions ['ros']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(stm32_nucleo_f303re_driver) by extension 'ros'
+[0.512s] DEBUG:colcon.colcon_core.package_identification:Package 'stm32_nucleo_f303re_driver' with type 'ros.ament_cmake' and name 'stm32_nucleo_f303re_driver'
+[0.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.513s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.513s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.513s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.513s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.570s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_args' from command line to 'None'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_target' from command line to 'None'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_clean_cache' from command line to 'False'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_clean_first' from command line to 'False'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'cmake_force_configure' from command line to 'False'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'ament_cmake_args' from command line to 'None'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'catkin_cmake_args' from command line to 'None'
+[0.571s] Level 5:colcon.colcon_core.verb:set package 'joy_teleop_twist_ref' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.571s] DEBUG:colcon.colcon_core.verb:Building package 'joy_teleop_twist_ref' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws/src/build/joy_teleop_twist_ref', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws/src/install/joy_teleop_twist_ref', 'merge_install': False, 'path': '/root/ws/src/joy_teleop_twist_ref', 'symlink_install': False, 'test_result_base': None}
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_args' from command line to 'None'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_target' from command line to 'None'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.573s] Level 5:colcon.colcon_core.verb:set package 'stm32_nucleo_f303re_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.573s] DEBUG:colcon.colcon_core.verb:Building package 'stm32_nucleo_f303re_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws/src/build/stm32_nucleo_f303re_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws/src/install/stm32_nucleo_f303re_driver', 'merge_install': False, 'path': '/root/ws/src/stm32_nucleo_f303re_driver', 'symlink_install': False, 'test_result_base': None}
+[0.573s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.579s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.580s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws/src/joy_teleop_twist_ref' with build type 'ament_cmake'
+[0.580s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws/src/joy_teleop_twist_ref'
+[0.587s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.588s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.588s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.599s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws/src/stm32_nucleo_f303re_driver' with build type 'ament_cmake'
+[0.601s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws/src/stm32_nucleo_f303re_driver'
+[0.601s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.601s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.616s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/joy_teleop_twist_ref -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/joy_teleop_twist_ref
+[0.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/stm32_nucleo_f303re_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/stm32_nucleo_f303re_driver
+[3.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/joy_teleop_twist_ref -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/joy_teleop_twist_ref
+[3.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+[5.660s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/stm32_nucleo_f303re_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/stm32_nucleo_f303re_driver
+[5.666s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+[26.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+[26.564s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver
+[26.728s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stm32_nucleo_f303re_driver)
+[26.729s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver
+[26.739s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver' for CMake module files
+[26.742s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver' for CMake config files
+[26.743s] Level 1:colcon.colcon_core.shell:create_environment_hook('stm32_nucleo_f303re_driver', 'cmake_prefix_path')
+[26.745s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.ps1'
+[26.747s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.dsv'
+[26.749s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.sh'
+[26.753s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib'
+[26.753s] Level 1:colcon.colcon_core.shell:create_environment_hook('stm32_nucleo_f303re_driver', 'ld_library_path_lib')
+[26.754s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.ps1'
+[26.755s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.dsv'
+[26.757s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.sh'
+[26.758s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/bin'
+[26.758s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib/pkgconfig/stm32_nucleo_f303re_driver.pc'
+[26.762s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib/python3.10/site-packages'
+[26.763s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/bin'
+[26.764s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.ps1'
+[26.767s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.dsv'
+[26.769s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.sh'
+[26.773s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.bash'
+[26.776s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.zsh'
+[26.779s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws/src/install/stm32_nucleo_f303re_driver/share/colcon-core/packages/stm32_nucleo_f303re_driver)
+[26.781s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stm32_nucleo_f303re_driver)
+[26.782s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver' for CMake module files
+[26.784s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver' for CMake config files
+[26.785s] Level 1:colcon.colcon_core.shell:create_environment_hook('stm32_nucleo_f303re_driver', 'cmake_prefix_path')
+[26.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.ps1'
+[26.788s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.dsv'
+[26.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/cmake_prefix_path.sh'
+[26.791s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib'
+[26.792s] Level 1:colcon.colcon_core.shell:create_environment_hook('stm32_nucleo_f303re_driver', 'ld_library_path_lib')
+[26.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.ps1'
+[26.794s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.dsv'
+[26.796s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/hook/ld_library_path_lib.sh'
+[26.798s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/bin'
+[26.798s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib/pkgconfig/stm32_nucleo_f303re_driver.pc'
+[26.799s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/lib/python3.10/site-packages'
+[26.800s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/stm32_nucleo_f303re_driver/bin'
+[26.801s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.ps1'
+[26.804s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.dsv'
+[26.806s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.sh'
+[26.811s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.bash'
+[26.814s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.zsh'
+[26.819s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws/src/install/stm32_nucleo_f303re_driver/share/colcon-core/packages/stm32_nucleo_f303re_driver)
+[28.327s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/joy_teleop_twist_ref -- -j4 -l4
+[28.331s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws/src/build/joy_teleop_twist_ref': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref
+[28.357s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(joy_teleop_twist_ref)
+[28.358s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref' for CMake module files
+[28.358s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref' for CMake config files
+[28.359s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws/src/build/joy_teleop_twist_ref' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/joy_teleop_twist_ref
+[28.360s] Level 1:colcon.colcon_core.shell:create_environment_hook('joy_teleop_twist_ref', 'cmake_prefix_path')
+[28.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.ps1'
+[28.361s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.dsv'
+[28.362s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.sh'
+[28.364s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib'
+[28.364s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/bin'
+[28.364s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib/pkgconfig/joy_teleop_twist_ref.pc'
+[28.365s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib/python3.10/site-packages'
+[28.365s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/bin'
+[28.366s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.ps1'
+[28.367s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.dsv'
+[28.367s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.sh'
+[28.368s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.bash'
+[28.368s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.zsh'
+[28.369s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws/src/install/joy_teleop_twist_ref/share/colcon-core/packages/joy_teleop_twist_ref)
+[28.370s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(joy_teleop_twist_ref)
+[28.371s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref' for CMake module files
+[28.371s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref' for CMake config files
+[28.372s] Level 1:colcon.colcon_core.shell:create_environment_hook('joy_teleop_twist_ref', 'cmake_prefix_path')
+[28.372s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.ps1'
+[28.374s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.dsv'
+[28.375s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/hook/cmake_prefix_path.sh'
+[28.376s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib'
+[28.376s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/bin'
+[28.376s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib/pkgconfig/joy_teleop_twist_ref.pc'
+[28.376s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/lib/python3.10/site-packages'
+[28.377s] Level 1:colcon.colcon_core.environment:checking '/root/ws/src/install/joy_teleop_twist_ref/bin'
+[28.377s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.ps1'
+[28.378s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.dsv'
+[28.379s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.sh'
+[28.379s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.bash'
+[28.380s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.zsh'
+[28.381s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws/src/install/joy_teleop_twist_ref/share/colcon-core/packages/joy_teleop_twist_ref)
+[28.383s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[28.384s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[28.384s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[28.385s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[28.398s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[28.398s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[28.398s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[28.399s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[28.403s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[28.403s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[28.404s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws/src/install/local_setup.ps1'
+[28.407s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ws/src/install/_local_setup_util_ps1.py'
+[28.411s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws/src/install/setup.ps1'
+[28.414s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws/src/install/local_setup.sh'
+[28.415s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ws/src/install/_local_setup_util_sh.py'
+[28.417s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws/src/install/setup.sh'
+[28.418s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws/src/install/local_setup.bash'
+[28.419s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws/src/install/setup.bash'
+[28.420s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws/src/install/local_setup.zsh'
+[28.420s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws/src/install/setup.zsh'

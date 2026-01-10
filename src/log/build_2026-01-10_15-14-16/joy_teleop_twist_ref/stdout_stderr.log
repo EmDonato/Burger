@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target joy_vel_ref[0m
+[100%] Built target joy_vel_ref
+-- Install configuration: ""
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/lib/joy_teleop_twist_ref/joy_vel_ref
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/include
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/include/joy_teleop_twist_ref
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/package_run_dependencies/joy_teleop_twist_ref
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/parent_prefix_path/joy_teleop_twist_ref
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.sh
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.dsv
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.sh
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.dsv
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.bash
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.sh
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.zsh
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.dsv
+-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.dsv
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/packages/joy_teleop_twist_ref
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig.cmake
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig-version.cmake
+-- Up-to-date: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.xml

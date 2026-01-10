@@ -1,0 +1,625 @@
+[0.000000] (-) TimerEvent: {}
+[0.000494] (joy_teleop_twist_ref) JobQueued: {'identifier': 'joy_teleop_twist_ref', 'dependencies': OrderedDict()}
+[0.000584] (stm32_nucleo_f303re_driver) JobQueued: {'identifier': 'stm32_nucleo_f303re_driver', 'dependencies': OrderedDict()}
+[0.000622] (joy_teleop_twist_ref) JobStarted: {'identifier': 'joy_teleop_twist_ref'}
+[0.015978] (stm32_nucleo_f303re_driver) JobStarted: {'identifier': 'stm32_nucleo_f303re_driver'}
+[0.028975] (joy_teleop_twist_ref) JobProgress: {'identifier': 'joy_teleop_twist_ref', 'progress': 'cmake'}
+[0.030381] (joy_teleop_twist_ref) Command: {'cmd': ['/usr/bin/cmake', '/root/ws/src/joy_teleop_twist_ref', '-DCMAKE_INSTALL_PREFIX=/root/ws/src/install/joy_teleop_twist_ref'], 'cwd': '/root/ws/src/build/joy_teleop_twist_ref', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/joy_teleop_twist_ref'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[0.047721] (stm32_nucleo_f303re_driver) JobProgress: {'identifier': 'stm32_nucleo_f303re_driver', 'progress': 'cmake'}
+[0.048092] (stm32_nucleo_f303re_driver) Command: {'cmd': ['/usr/bin/cmake', '/root/ws/src/stm32_nucleo_f303re_driver', '-DCMAKE_INSTALL_PREFIX=/root/ws/src/install/stm32_nucleo_f303re_driver'], 'cwd': '/root/ws/src/build/stm32_nucleo_f303re_driver', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/stm32_nucleo_f303re_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[0.091147] (-) TimerEvent: {}
+[0.193350] (-) TimerEvent: {}
+[0.246309] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.255303] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.293539] (-) TimerEvent: {}
+[0.394301] (-) TimerEvent: {}
+[0.465998] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.489508] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.495064] (-) TimerEvent: {}
+[0.508740] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.542524] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.595182] (-) TimerEvent: {}
+[0.697753] (-) TimerEvent: {}
+[0.754663] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.776330] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.776846] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.777027] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.783354] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.787374] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.797910] (-) TimerEvent: {}
+[0.816330] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.819386] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.823917] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.830644] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.899059] (-) TimerEvent: {}
+[1.001560] (-) TimerEvent: {}
+[1.104175] (-) TimerEvent: {}
+[1.112443] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.128189] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.129011] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.132200] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.137154] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.164063] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.172421] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.172882] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.173581] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.177241] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.204726] (-) TimerEvent: {}
+[1.305870] (-) TimerEvent: {}
+[1.406465] (-) TimerEvent: {}
+[1.446775] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.507166] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.507607] (-) TimerEvent: {}
+[1.608116] (-) TimerEvent: {}
+[1.709131] (-) TimerEvent: {}
+[1.715017] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.768668] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.781776] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.788293] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.800949] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.809382] (-) TimerEvent: {}
+[1.825963] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.843416] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.849317] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.853191] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.864696] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.896013] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.909907] (-) TimerEvent: {}
+[1.927947] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.944036] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.944555] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.009675] (-) TimerEvent: {}
+[2.022208] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.026436] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.090251] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.109850] (-) TimerEvent: {}
+[2.137780] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.164397] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.208744] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.210165] (-) TimerEvent: {}
+[2.223051] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.223464] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.295922] (joy_teleop_twist_ref) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.310871] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.311316] (-) TimerEvent: {}
+[2.385557] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[2.386879] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[2.411547] (-) TimerEvent: {}
+[2.469899] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[2.471640] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[2.511734] (-) TimerEvent: {}
+[2.547610] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.549922] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.613277] (-) TimerEvent: {}
+[2.621207] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.624156] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.672445] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[2.713456] (-) TimerEvent: {}
+[2.729106] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[2.729576] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)\n'}
+[2.745127] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[2.754354] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.815973] (-) TimerEvent: {}
+[2.916556] (-) TimerEvent: {}
+[2.972397] (joy_teleop_twist_ref) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.974633] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.975134] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.975254] (joy_teleop_twist_ref) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.977859] (joy_teleop_twist_ref) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.981101] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.983361] (joy_teleop_twist_ref) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.983983] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.004014] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Generating done\n'}
+[3.009067] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Build files have been written to: /root/ws/src/build/joy_teleop_twist_ref\n'}
+[3.016729] (-) TimerEvent: {}
+[3.043434] (joy_teleop_twist_ref) CommandEnded: {'returncode': 0}
+[3.052162] (joy_teleop_twist_ref) JobProgress: {'identifier': 'joy_teleop_twist_ref', 'progress': 'build'}
+[3.052266] (joy_teleop_twist_ref) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws/src/build/joy_teleop_twist_ref', '--', '-j4', '-l4'], 'cwd': '/root/ws/src/build/joy_teleop_twist_ref', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/joy_teleop_twist_ref'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[3.116866] (-) TimerEvent: {}
+[3.160239] (joy_teleop_twist_ref) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/joy_vel_ref.dir/src/joy_vel_ref.cpp.o\x1b[0m\n'}
+[3.220489] (-) TimerEvent: {}
+[3.323184] (-) TimerEvent: {}
+[3.424001] (-) TimerEvent: {}
+[3.439877] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[3.524144] (-) TimerEvent: {}
+[3.626885] (-) TimerEvent: {}
+[3.728367] (-) TimerEvent: {}
+[3.831419] (-) TimerEvent: {}
+[3.932502] (-) TimerEvent: {}
+[4.034506] (-) TimerEvent: {}
+[4.136542] (-) TimerEvent: {}
+[4.224117] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[4.237910] (-) TimerEvent: {}
+[4.339690] (-) TimerEvent: {}
+[4.444149] (-) TimerEvent: {}
+[4.519575] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[4.544296] (-) TimerEvent: {}
+[4.575194] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[4.578841] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[4.618946] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[4.619410] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[4.620981] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[4.621496] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[4.644450] (-) TimerEvent: {}
+[4.654853] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[4.744604] (-) TimerEvent: {}
+[4.804015] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[4.844796] (-) TimerEvent: {}
+[4.857061] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[4.858207] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/root/ws/src/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver>\n'}
+[4.858507] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[4.859764] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[4.861145] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[4.862379] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[4.864276] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[4.864812] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[4.866265] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[4.872730] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.945142] (-) TimerEvent: {}
+[4.974764] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[5.015254] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Build files have been written to: /root/ws/src/build/stm32_nucleo_f303re_driver\n'}
+[5.045942] (-) TimerEvent: {}
+[5.075973] (stm32_nucleo_f303re_driver) CommandEnded: {'returncode': 0}
+[5.077385] (stm32_nucleo_f303re_driver) JobProgress: {'identifier': 'stm32_nucleo_f303re_driver', 'progress': 'build'}
+[5.078098] (stm32_nucleo_f303re_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws/src/build/stm32_nucleo_f303re_driver', '--', '-j4', '-l4'], 'cwd': '/root/ws/src/build/stm32_nucleo_f303re_driver', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/stm32_nucleo_f303re_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[5.146516] (-) TimerEvent: {}
+[5.239710] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[5.247682] (-) TimerEvent: {}
+[5.268915] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[5.322691] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_copy_stm32_nucleo_f303re_driver\n'}
+[5.347979] (-) TimerEvent: {}
+[5.448760] (-) TimerEvent: {}
+[5.549664] (-) TimerEvent: {}
+[5.650419] (-) TimerEvent: {}
+[5.756021] (-) TimerEvent: {}
+[5.856697] (-) TimerEvent: {}
+[5.957322] (-) TimerEvent: {}
+[6.057965] (-) TimerEvent: {}
+[6.158715] (-) TimerEvent: {}
+[6.250037] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'running egg_info\n'}
+[6.254362] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'creating stm32_nucleo_f303re_driver.egg-info\n'}
+[6.256281] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'writing stm32_nucleo_f303re_driver.egg-info/PKG-INFO\n'}
+[6.258467] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'writing dependency_links to stm32_nucleo_f303re_driver.egg-info/dependency_links.txt\n'}
+[6.258904] (-) TimerEvent: {}
+[6.260440] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'writing top-level names to stm32_nucleo_f303re_driver.egg-info/top_level.txt\n'}
+[6.261894] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"writing manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'\n"}
+[6.274563] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"reading manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'\n"}
+[6.278080] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"writing manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'\n"}
+[6.359612] (-) TimerEvent: {}
+[6.431891] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_generator_c.dir/rosidl_generator_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.c.o\x1b[0m\n'}
+[6.460265] (-) TimerEvent: {}
+[6.462129] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  9%] Built target ament_cmake_python_build_stm32_nucleo_f303re_driver_egg\n'}
+[6.469859] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[  9%] Built target stm32_nucleo_f303re_driver__cpp\n'}
+[6.497493] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[6.514410] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[6.528128] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[6.560496] (-) TimerEvent: {}
+[6.626946] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 21%] \x1b[32m\x1b[1mLinking C shared library libstm32_nucleo_f303re_driver__rosidl_generator_c.so\x1b[0m\n'}
+[6.662857] (-) TimerEvent: {}
+[6.763974] (-) TimerEvent: {}
+[6.815901] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 21%] Built target stm32_nucleo_f303re_driver__rosidl_generator_c\n'}
+[6.867865] (-) TimerEvent: {}
+[6.869850] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 24%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[6.969220] (-) TimerEvent: {}
+[7.074655] (-) TimerEvent: {}
+[7.175280] (-) TimerEvent: {}
+[7.275949] (-) TimerEvent: {}
+[7.381413] (-) TimerEvent: {}
+[7.482422] (-) TimerEvent: {}
+[7.586579] (-) TimerEvent: {}
+[7.687703] (-) TimerEvent: {}
+[7.724675] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.cpp.o\x1b[0m\n'}
+[7.788041] (-) TimerEvent: {}
+[7.840425] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/stm32_nucleo_f303re_driver/msg/wheel_pwm__type_support.cpp.o\x1b[0m\n'}
+[7.888221] (-) TimerEvent: {}
+[7.901625] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/stm32_nucleo_f303re_driver/msg/detail/dds_fastrtps/wheel_pwm__type_support.cpp.o\x1b[0m\n'}
+[7.988395] (-) TimerEvent: {}
+[8.025594] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support_c.cpp.o\x1b[0m\n'}
+[8.088564] (-) TimerEvent: {}
+[8.192837] (-) TimerEvent: {}
+[8.296732] (-) TimerEvent: {}
+[8.400365] (-) TimerEvent: {}
+[8.501878] (-) TimerEvent: {}
+[8.604027] (-) TimerEvent: {}
+[8.708459] (-) TimerEvent: {}
+[8.809178] (-) TimerEvent: {}
+[8.912015] (-) TimerEvent: {}
+[8.987239] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 39%] \x1b[32m\x1b[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[9.012173] (-) TimerEvent: {}
+[9.116065] (-) TimerEvent: {}
+[9.216919] (-) TimerEvent: {}
+[9.239704] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 42%] \x1b[32m\x1b[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.244155] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 42%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_cpp\n'}
+[9.318026] (-) TimerEvent: {}
+[9.326041] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 45%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[9.421943] (-) TimerEvent: {}
+[9.522678] (-) TimerEvent: {}
+[9.623415] (-) TimerEvent: {}
+[9.687528] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 45%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c\n'}
+[9.726108] (-) TimerEvent: {}
+[9.776002] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.828720] (-) TimerEvent: {}
+[9.860406] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[9.932441] (-) TimerEvent: {}
+[10.033207] (-) TimerEvent: {}
+[10.136316] (-) TimerEvent: {}
+[10.203032] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[10.236571] (-) TimerEvent: {}
+[10.295083] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 54%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp\n'}
+[10.340027] (-) TimerEvent: {}
+[10.412256] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/stm_driver.dir/src/stm_driver.cpp.o\x1b[0m\n'}
+[10.443492] (-) TimerEvent: {}
+[10.549784] (-) TimerEvent: {}
+[10.655141] (-) TimerEvent: {}
+[10.667103] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 57%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp\n'}
+[10.756143] (-) TimerEvent: {}
+[10.773234] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.c.o\x1b[0m\n'}
+[10.858382] (-) TimerEvent: {}
+[10.939110] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking C shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[10.959068] (-) TimerEvent: {}
+[10.984964] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/stm32_nucleo_f303re_driver/msg/wheel_pwm__type_support.cpp.o\x1b[0m\n'}
+[11.053333] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 66%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c\n'}
+[11.058855] (-) TimerEvent: {}
+[11.081999] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so\x1b[0m\n'}
+[11.160991] (-) TimerEvent: {}
+[11.185957] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 69%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_c\n'}
+[11.248028] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 69%] Built target stm32_nucleo_f303re_driver\n'}
+[11.261173] (-) TimerEvent: {}
+[11.301635] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 72%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[11.361339] (-) TimerEvent: {}
+[11.468208] (-) TimerEvent: {}
+[11.568943] (-) TimerEvent: {}
+[11.669645] (-) TimerEvent: {}
+[11.770336] (-) TimerEvent: {}
+[11.871052] (-) TimerEvent: {}
+[11.971760] (-) TimerEvent: {}
+[12.072445] (-) TimerEvent: {}
+[12.173264] (-) TimerEvent: {}
+[12.217095] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 72%] Built target stm32_nucleo_f303re_driver__py\n'}
+[12.272279] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_generator_py.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/msg/_wheel_pwm_s.c.o\x1b[0m\n'}
+[12.274025] (-) TimerEvent: {}
+[12.380085] (-) TimerEvent: {}
+[12.480841] (-) TimerEvent: {}
+[12.581805] (-) TimerEvent: {}
+[12.609230] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/libstm32_nucleo_f303re_driver__rosidl_generator_py.so\x1b[0m\n'}
+[12.684398] (-) TimerEvent: {}
+[12.786059] (-) TimerEvent: {}
+[12.799606] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 78%] Built target stm32_nucleo_f303re_driver__rosidl_generator_py\n'}
+[12.864592] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[12.875378] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[12.888377] (-) TimerEvent: {}
+[12.990860] (-) TimerEvent: {}
+[13.091690] (-) TimerEvent: {}
+[13.163597] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[13.196022] (-) TimerEvent: {}
+[13.262217] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[13.296155] (-) TimerEvent: {}
+[13.319515] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 90%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext\n'}
+[13.396317] (-) TimerEvent: {}
+[13.405026] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[13.454242] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 93%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext\n'}
+[13.498726] (-) TimerEvent: {}
+[13.599999] (-) TimerEvent: {}
+[13.700766] (-) TimerEvent: {}
+[13.705419] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[13.801088] (-) TimerEvent: {}
+[13.828837] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[ 96%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext\n'}
+[13.901373] (-) TimerEvent: {}
+[14.002410] (-) TimerEvent: {}
+[14.104028] (-) TimerEvent: {}
+[14.205623] (-) TimerEvent: {}
+[14.306309] (-) TimerEvent: {}
+[14.407020] (-) TimerEvent: {}
+[14.508100] (-) TimerEvent: {}
+[14.609413] (-) TimerEvent: {}
+[14.710096] (-) TimerEvent: {}
+[14.810812] (-) TimerEvent: {}
+[14.911545] (-) TimerEvent: {}
+[15.013122] (-) TimerEvent: {}
+[15.113770] (-) TimerEvent: {}
+[15.214668] (-) TimerEvent: {}
+[15.315358] (-) TimerEvent: {}
+[15.416880] (-) TimerEvent: {}
+[15.519638] (-) TimerEvent: {}
+[15.620354] (-) TimerEvent: {}
+[15.721019] (-) TimerEvent: {}
+[15.821723] (-) TimerEvent: {}
+[15.922402] (-) TimerEvent: {}
+[16.023082] (-) TimerEvent: {}
+[16.123798] (-) TimerEvent: {}
+[16.224562] (-) TimerEvent: {}
+[16.325229] (-) TimerEvent: {}
+[16.428725] (-) TimerEvent: {}
+[16.530047] (-) TimerEvent: {}
+[16.630685] (-) TimerEvent: {}
+[16.734959] (-) TimerEvent: {}
+[16.835893] (-) TimerEvent: {}
+[16.936540] (-) TimerEvent: {}
+[17.037221] (-) TimerEvent: {}
+[17.137960] (-) TimerEvent: {}
+[17.240603] (-) TimerEvent: {}
+[17.341231] (-) TimerEvent: {}
+[17.442171] (-) TimerEvent: {}
+[17.543173] (-) TimerEvent: {}
+[17.582155] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid StmDriver::handle_message_()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.582697] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:271:19:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Krpm_vl\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.582854] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'  271 |             float \x1b[01;35m\x1b[Krpm_vl\x1b[m\x1b[K = d[2], rpm_vr = d[3];\n'}
+[17.582935] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'      |                   \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[17.583007] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:271:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Krpm_vr\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.583084] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'  271 |             float rpm_vl = d[2], \x1b[01;35m\x1b[Krpm_vr\x1b[m\x1b[K = d[3];\n'}
+[17.583153] (stm32_nucleo_f303re_driver) StderrLine: {'line': b'      |                                  \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[17.643345] (-) TimerEvent: {}
+[17.744371] (-) TimerEvent: {}
+[17.845305] (-) TimerEvent: {}
+[17.946078] (-) TimerEvent: {}
+[18.046958] (-) TimerEvent: {}
+[18.147979] (-) TimerEvent: {}
+[18.249755] (-) TimerEvent: {}
+[18.350677] (-) TimerEvent: {}
+[18.451341] (-) TimerEvent: {}
+[18.552410] (-) TimerEvent: {}
+[18.653317] (-) TimerEvent: {}
+[18.754809] (-) TimerEvent: {}
+[18.856207] (-) TimerEvent: {}
+[18.956699] (-) TimerEvent: {}
+[19.057610] (-) TimerEvent: {}
+[19.158582] (-) TimerEvent: {}
+[19.259666] (-) TimerEvent: {}
+[19.360582] (-) TimerEvent: {}
+[19.461484] (-) TimerEvent: {}
+[19.562415] (-) TimerEvent: {}
+[19.663387] (-) TimerEvent: {}
+[19.764430] (-) TimerEvent: {}
+[19.865479] (-) TimerEvent: {}
+[19.966446] (-) TimerEvent: {}
+[20.067387] (-) TimerEvent: {}
+[20.168427] (-) TimerEvent: {}
+[20.269469] (-) TimerEvent: {}
+[20.370398] (-) TimerEvent: {}
+[20.471440] (-) TimerEvent: {}
+[20.572396] (-) TimerEvent: {}
+[20.673307] (-) TimerEvent: {}
+[20.774243] (-) TimerEvent: {}
+[20.875183] (-) TimerEvent: {}
+[20.976287] (-) TimerEvent: {}
+[21.076970] (-) TimerEvent: {}
+[21.177646] (-) TimerEvent: {}
+[21.278314] (-) TimerEvent: {}
+[21.379981] (-) TimerEvent: {}
+[21.480625] (-) TimerEvent: {}
+[21.581279] (-) TimerEvent: {}
+[21.681941] (-) TimerEvent: {}
+[21.782695] (-) TimerEvent: {}
+[21.883440] (-) TimerEvent: {}
+[21.985381] (-) TimerEvent: {}
+[22.086255] (-) TimerEvent: {}
+[22.186952] (-) TimerEvent: {}
+[22.287673] (-) TimerEvent: {}
+[22.388609] (-) TimerEvent: {}
+[22.489323] (-) TimerEvent: {}
+[22.590025] (-) TimerEvent: {}
+[22.690699] (-) TimerEvent: {}
+[22.791317] (-) TimerEvent: {}
+[22.891981] (-) TimerEvent: {}
+[22.992662] (-) TimerEvent: {}
+[23.093413] (-) TimerEvent: {}
+[23.194375] (-) TimerEvent: {}
+[23.295365] (-) TimerEvent: {}
+[23.397766] (-) TimerEvent: {}
+[23.498416] (-) TimerEvent: {}
+[23.599426] (-) TimerEvent: {}
+[23.700430] (-) TimerEvent: {}
+[23.801364] (-) TimerEvent: {}
+[23.902393] (-) TimerEvent: {}
+[24.003326] (-) TimerEvent: {}
+[24.104240] (-) TimerEvent: {}
+[24.205131] (-) TimerEvent: {}
+[24.306137] (-) TimerEvent: {}
+[24.407054] (-) TimerEvent: {}
+[24.507912] (-) TimerEvent: {}
+[24.608353] (-) TimerEvent: {}
+[24.709314] (-) TimerEvent: {}
+[24.811335] (-) TimerEvent: {}
+[24.912336] (-) TimerEvent: {}
+[25.014217] (-) TimerEvent: {}
+[25.133855] (-) TimerEvent: {}
+[25.210268] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable stm_driver\x1b[0m\n'}
+[25.234852] (-) TimerEvent: {}
+[25.336882] (-) TimerEvent: {}
+[25.440718] (-) TimerEvent: {}
+[25.542210] (-) TimerEvent: {}
+[25.644005] (-) TimerEvent: {}
+[25.745152] (-) TimerEvent: {}
+[25.847982] (-) TimerEvent: {}
+[25.914979] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'[100%] Built target stm_driver\n'}
+[25.948148] (-) TimerEvent: {}
+[25.959296] (stm32_nucleo_f303re_driver) CommandEnded: {'returncode': 0}
+[25.961147] (stm32_nucleo_f303re_driver) JobProgress: {'identifier': 'stm32_nucleo_f303re_driver', 'progress': 'install'}
+[25.978140] (stm32_nucleo_f303re_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws/src/build/stm32_nucleo_f303re_driver'], 'cwd': '/root/ws/src/build/stm32_nucleo_f303re_driver', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/stm32_nucleo_f303re_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[25.996706] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[26.002205] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/rosidl_interfaces/stm32_nucleo_f303re_driver\n'}
+[26.002646] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.002763] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.002845] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/wheel_pwm.h\n'}
+[26.002917] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_generator_c__visibility_control.h\n'}
+[26.002985] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.003057] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.c\n'}
+[26.003138] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__struct.h\n'}
+[26.003206] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.h\n'}
+[26.003279] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.h\n'}
+[26.003339] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/library_path.sh\n'}
+[26.003412] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/library_path.dsv\n'}
+[26.003476] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_c.so\n'}
+[26.003542] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_c.so" to ""\n'}
+[26.003607] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.003679] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.003781] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[26.009393] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.009631] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_fastrtps_c.h\n'}
+[26.011993] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so\n'}
+[26.012420] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[26.012611] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.012789] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.013015] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[26.013216] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/wheel_pwm.hpp\n'}
+[26.013337] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.013446] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.hpp\n'}
+[26.013571] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__struct.hpp\n'}
+[26.013672] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__builder.hpp\n'}
+[26.013795] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__traits.hpp\n'}
+[26.013901] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.014006] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.015776] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[26.016597] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.016803] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/dds_fastrtps\n'}
+[26.016962] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[26.017078] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so\n'}
+[26.017182] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[26.017263] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.017402] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.017471] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[26.017609] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.017736] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.c\n'}
+[26.017824] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_introspection_c.h\n'}
+[26.017921] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so\n'}
+[26.018024] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so" to ""\n'}
+[26.018136] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so\n'}
+[26.018757] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so" to ""\n'}
+[26.019082] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver\n'}
+[26.020131] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg\n'}
+[26.020456] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail\n'}
+[26.021330] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.cpp\n'}
+[26.021553] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_introspection_cpp.hpp\n'}
+[26.021700] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so\n'}
+[26.021866] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[26.022019] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so\n'}
+[26.022140] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so" to ""\n'}
+[26.022254] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/pythonpath.sh\n'}
+[26.022389] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/pythonpath.dsv\n'}
+[26.024109] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info\n'}
+[26.024545] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/top_level.txt\n'}
+[26.024734] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/dependency_links.txt\n'}
+[26.024878] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/PKG-INFO\n'}
+[26.025022] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/SOURCES.txt\n'}
+[26.025141] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver\n'}
+[26.025251] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.025397] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.025824] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[26.026101] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/libstm32_nucleo_f303re_driver__rosidl_generator_py.so\n'}
+[26.026250] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.026420] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg\n'}
+[26.026538] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm.py\n'}
+[26.026654] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm_s.c\n'}
+[26.026769] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/__init__.py\n'}
+[26.026871] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[26.027428] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_c.c\n'}
+[26.027530] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/__init__.py\n'}
+[26.048274] (-) TimerEvent: {}
+[26.094177] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"Listing '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver'...\n"}
+[26.094690] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/__init__.py'...\n"}
+[26.094963] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"Listing '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg'...\n"}
+[26.095198] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/__init__.py'...\n"}
+[26.095452] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b"Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm.py'...\n"}
+[26.119587] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.122008] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[26.122357] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.122584] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[26.123956] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[26.124821] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[26.125289] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_py.so\n'}
+[26.125801] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_py.so" to ""\n'}
+[26.126237] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/msg/WheelPwm.idl\n'}
+[26.126603] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/msg/WheelPwm.msg\n'}
+[26.126813] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/stm32_nucleo_f303re_driver/stm_driver\n'}
+[26.126979] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/stm32_nucleo_f303re_driver/stm_driver" to ""\n'}
+[26.127179] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver//launch\n'}
+[26.127383] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver//launch/burger_launch.py\n'}
+[26.127530] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include\n'}
+[26.127865] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver\n'}
+[26.128319] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/parsing_types.hpp\n'}
+[26.128637] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/package_run_dependencies/stm32_nucleo_f303re_driver\n'}
+[26.129261] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/parent_prefix_path/stm32_nucleo_f303re_driver\n'}
+[26.129730] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/ament_prefix_path.sh\n'}
+[26.130027] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/ament_prefix_path.dsv\n'}
+[26.130311] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/path.sh\n'}
+[26.130557] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/path.dsv\n'}
+[26.130846] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.bash\n'}
+[26.131014] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.sh\n'}
+[26.132250] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.zsh\n'}
+[26.136716] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.dsv\n'}
+[26.137072] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.dsv\n'}
+[26.137257] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/packages/stm32_nucleo_f303re_driver\n'}
+[26.137454] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cExport.cmake\n'}
+[26.137601] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cExport-noconfig.cmake\n'}
+[26.137727] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[26.137850] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[26.137971] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cppExport.cmake\n'}
+[26.138089] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[26.138188] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[26.138288] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cExport.cmake\n'}
+[26.138394] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[26.138500] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cExport.cmake\n'}
+[26.138619] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[26.138717] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[26.139235] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[26.139691] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cppExport.cmake\n'}
+[26.140083] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[26.140381] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_pyExport.cmake\n'}
+[26.140514] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_pyExport-noconfig.cmake\n'}
+[26.140609] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake-extras.cmake\n'}
+[26.140720] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[26.140883] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[26.141097] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[26.141303] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[26.141447] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[26.141555] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[26.141637] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driverConfig.cmake\n'}
+[26.141714] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driverConfig-version.cmake\n'}
+[26.141828] (stm32_nucleo_f303re_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.xml\n'}
+[26.144559] (stm32_nucleo_f303re_driver) CommandEnded: {'returncode': 0}
+[26.148524] (-) TimerEvent: {}
+[26.236757] (stm32_nucleo_f303re_driver) JobEnded: {'identifier': 'stm32_nucleo_f303re_driver', 'rc': 0}
+[26.248727] (-) TimerEvent: {}
+[26.349472] (-) TimerEvent: {}
+[26.450194] (-) TimerEvent: {}
+[26.553213] (-) TimerEvent: {}
+[26.599604] (joy_teleop_twist_ref) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable joy_vel_ref\x1b[0m\n'}
+[26.655243] (-) TimerEvent: {}
+[26.756231] (-) TimerEvent: {}
+[26.857391] (-) TimerEvent: {}
+[26.958228] (-) TimerEvent: {}
+[27.059125] (-) TimerEvent: {}
+[27.160037] (-) TimerEvent: {}
+[27.261086] (-) TimerEvent: {}
+[27.364255] (-) TimerEvent: {}
+[27.464973] (-) TimerEvent: {}
+[27.565740] (-) TimerEvent: {}
+[27.666462] (-) TimerEvent: {}
+[27.724481] (joy_teleop_twist_ref) StdoutLine: {'line': b'[100%] Built target joy_vel_ref\n'}
+[27.742261] (joy_teleop_twist_ref) CommandEnded: {'returncode': 0}
+[27.743405] (joy_teleop_twist_ref) JobProgress: {'identifier': 'joy_teleop_twist_ref', 'progress': 'install'}
+[27.743799] (joy_teleop_twist_ref) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws/src/build/joy_teleop_twist_ref'], 'cwd': '/root/ws/src/build/joy_teleop_twist_ref', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-e3c9825f-9f65-4ecf-af3c-bfa89c55ff76.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-c167b43d-2a46-4bf9-aca7-046657c40330.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-9571bdcec3184ec1.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/4603bd6b3a4afb097b05d08e9ef62e39/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-f1a215b6-742f-4a74-89ae-1b8a2f43a48e.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/joy_teleop_twist_ref'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/stm32_nucleo_f303re_driver:/opt/ros/humble')]), 'shell': False}
+[27.761005] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[27.761604] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/lib/joy_teleop_twist_ref/joy_vel_ref\n'}
+[27.765900] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/joy_teleop_twist_ref/lib/joy_teleop_twist_ref/joy_vel_ref" to ""\n'}
+[27.766214] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/include\n'}
+[27.766657] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/include/joy_teleop_twist_ref\n'}
+[27.766801] (-) TimerEvent: {}
+[27.767077] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/package_run_dependencies/joy_teleop_twist_ref\n'}
+[27.767200] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/parent_prefix_path/joy_teleop_twist_ref\n'}
+[27.767484] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.sh\n'}
+[27.767646] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/ament_prefix_path.dsv\n'}
+[27.767786] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.sh\n'}
+[27.768004] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/environment/path.dsv\n'}
+[27.768185] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.bash\n'}
+[27.768936] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.sh\n'}
+[27.769118] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.zsh\n'}
+[27.769231] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/local_setup.dsv\n'}
+[27.769304] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.dsv\n'}
+[27.769708] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/ament_index/resource_index/packages/joy_teleop_twist_ref\n'}
+[27.769841] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig.cmake\n'}
+[27.770347] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/cmake/joy_teleop_twist_refConfig-version.cmake\n'}
+[27.770514] (joy_teleop_twist_ref) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/joy_teleop_twist_ref/share/joy_teleop_twist_ref/package.xml\n'}
+[27.775073] (joy_teleop_twist_ref) CommandEnded: {'returncode': 0}
+[27.799946] (joy_teleop_twist_ref) JobEnded: {'identifier': 'joy_teleop_twist_ref', 'rc': 0}
+[27.802149] (-) EventReactorShutdown: {}

@@ -33,7 +33,7 @@ target_link_libraries(stm_driver
 
 target_include_directories(stm_driver
   PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/stm32_nucleo_f303re_driver>
     $<INSTALL_INTERFACE:include>
 )
 
@@ -50,13 +50,14 @@ install(TARGETS stm_driver
   DESTINATION lib/${PROJECT_NAME}
 )
 
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 install(DIRECTORY include/
   DESTINATION include
 )
 
-install(DIRECTORY config/
-  DESTINATION share/${PROJECT_NAME}/config
-)
 
 # =====================
 # TESTING

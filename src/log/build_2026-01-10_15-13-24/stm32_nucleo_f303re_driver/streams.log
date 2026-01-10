@@ -1,0 +1,266 @@
+[0.033s] Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/stm32_nucleo_f303re_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/stm32_nucleo_f303re_driver
+[0.240s] -- The C compiler identification is GNU 11.4.0
+[0.450s] -- The CXX compiler identification is GNU 11.4.0
+[0.493s] -- Detecting C compiler ABI info
+[0.739s] -- Detecting C compiler ABI info - done
+[0.761s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.761s] -- Detecting C compile features
+[0.761s] -- Detecting C compile features - done
+[0.768s] -- Detecting CXX compiler ABI info
+[1.097s] -- Detecting CXX compiler ABI info - done
+[1.113s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.114s] -- Detecting CXX compile features
+[1.116s] -- Detecting CXX compile features - done
+[1.121s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.431s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.699s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[1.766s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.773s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.785s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.810s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.837s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.928s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.929s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.075s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.122s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.193s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.207s] -- Looking for pthread.h
+[2.371s] -- Looking for pthread.h - found
+[2.371s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.532s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.534s] -- Found Threads: TRUE  
+[2.658s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.714s] -- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)
+[2.729s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[3.424s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[4.208s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.504s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.561s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[4.563s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.603s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[4.603s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.605s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.606s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[4.639s] -- Found PythonExtra: .so  
+[4.788s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.841s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.842s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/root/ws/src/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver>
+[4.843s] -- Configured cppcheck exclude dirs and/or files: 
+[4.844s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.845s] -- Added test 'lint_cmake' to check CMake code style
+[4.846s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[4.849s] -- Added test 'uncrustify' to check C / C++ code style
+[4.849s] -- Configured uncrustify additional arguments: 
+[4.851s] -- Added test 'xmllint' to check XML markup files
+[4.857s] -- Configuring done
+[4.960s] -- Generating done
+[5.000s] -- Build files have been written to: /root/ws/src/build/stm32_nucleo_f303re_driver
+[5.060s] Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /root/ws/src/stm32_nucleo_f303re_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/stm32_nucleo_f303re_driver
+[5.064s] Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+[5.226s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[5.255s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[5.307s] [  6%] Built target ament_cmake_python_copy_stm32_nucleo_f303re_driver
+[6.234s] running egg_info
+[6.239s] creating stm32_nucleo_f303re_driver.egg-info
+[6.241s] writing stm32_nucleo_f303re_driver.egg-info/PKG-INFO
+[6.243s] writing dependency_links to stm32_nucleo_f303re_driver.egg-info/dependency_links.txt
+[6.245s] writing top-level names to stm32_nucleo_f303re_driver.egg-info/top_level.txt
+[6.246s] writing manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'
+[6.259s] reading manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'
+[6.264s] writing manifest file 'stm32_nucleo_f303re_driver.egg-info/SOURCES.txt'
+[6.417s] [  9%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_generator_c.dir/rosidl_generator_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.c.o[0m
+[6.446s] [  9%] Built target ament_cmake_python_build_stm32_nucleo_f303re_driver_egg
+[6.454s] [  9%] Built target stm32_nucleo_f303re_driver__cpp
+[6.482s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[6.499s] [ 15%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[6.512s] [ 18%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[6.611s] [ 21%] [32m[1mLinking C shared library libstm32_nucleo_f303re_driver__rosidl_generator_c.so[0m
+[6.800s] [ 21%] Built target stm32_nucleo_f303re_driver__rosidl_generator_c
+[6.854s] [ 24%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[7.709s] [ 27%] [32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.cpp.o[0m
+[7.825s] [ 30%] [32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/stm32_nucleo_f303re_driver/msg/wheel_pwm__type_support.cpp.o[0m
+[7.886s] [ 33%] [32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/stm32_nucleo_f303re_driver/msg/detail/dds_fastrtps/wheel_pwm__type_support.cpp.o[0m
+[8.010s] [ 36%] [32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support_c.cpp.o[0m
+[8.972s] [ 39%] [32m[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so[0m
+[9.224s] [ 42%] [32m[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so[0m
+[9.228s] [ 42%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_cpp
+[9.311s] [ 45%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[9.672s] [ 45%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c
+[9.760s] [ 48%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[9.845s] [ 51%] [32m[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so[0m
+[10.189s] [ 54%] [32m[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so[0m
+[10.279s] [ 54%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp
+[10.397s] [ 57%] [32mBuilding CXX object CMakeFiles/stm_driver.dir/src/stm_driver.cpp.o[0m
+[10.651s] [ 57%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp
+[10.757s] [ 60%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.c.o[0m
+[10.923s] [ 63%] [32m[1mLinking C shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so[0m
+[10.969s] [ 66%] [32mBuilding CXX object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/stm32_nucleo_f303re_driver/msg/wheel_pwm__type_support.cpp.o[0m
+[11.038s] [ 66%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c
+[11.066s] [ 69%] [32m[1mLinking CXX shared library libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so[0m
+[11.170s] [ 69%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_c
+[11.232s] [ 69%] Built target stm32_nucleo_f303re_driver
+[11.286s] [ 72%] [34m[1mGenerating Python code for ROS interfaces[0m
+[12.202s] [ 72%] Built target stm32_nucleo_f303re_driver__py
+[12.257s] [ 75%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_generator_py.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/msg/_wheel_pwm_s.c.o[0m
+[12.594s] [ 78%] [32m[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/libstm32_nucleo_f303re_driver__rosidl_generator_py.so[0m
+[12.784s] [ 78%] Built target stm32_nucleo_f303re_driver__rosidl_generator_py
+[12.849s] [ 81%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[12.860s] [ 84%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[13.149s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[13.246s] [ 90%] [32m[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[13.304s] [ 90%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c__pyext
+[13.389s] [ 93%] [32mBuilding C object CMakeFiles/stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_c.c.o[0m
+[13.439s] [ 93%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c__pyext
+[13.690s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[13.813s] [ 96%] Built target stm32_nucleo_f303re_driver__rosidl_typesupport_c__pyext
+[17.566s] [01m[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:[m[K In member function ‘[01m[Kvoid StmDriver::handle_message_()[m[K’:
+[17.567s] [01m[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:271:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krpm_vl[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.567s]   271 |             float [01;35m[Krpm_vl[m[K = d[2], rpm_vr = d[3];
+[17.567s]       |                   [01;35m[K^~~~~~[m[K
+[17.567s] [01m[K/root/ws/src/stm32_nucleo_f303re_driver/src/stm_driver.cpp:271:34:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krpm_vr[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.567s]   271 |             float rpm_vl = d[2], [01;35m[Krpm_vr[m[K = d[3];
+[17.567s]       |                                  [01;35m[K^~~~~~[m[K
+[25.195s] [100%] [32m[1mLinking CXX executable stm_driver[0m
+[25.899s] [100%] Built target stm_driver
+[25.944s] Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/stm32_nucleo_f303re_driver -- -j4 -l4
+[25.964s] Invoking command in '/root/ws/src/build/stm32_nucleo_f303re_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver
+[25.984s] -- Install configuration: ""
+[25.986s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/rosidl_interfaces/stm32_nucleo_f303re_driver
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/wheel_pwm.h
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_generator_c__visibility_control.h
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.c
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__struct.h
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.h
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__functions.h
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/library_path.sh
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/library_path.dsv
+[25.987s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_c.so
+[25.988s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_c.so" to ""
+[25.988s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[25.988s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[25.993s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[25.993s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[25.994s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_fastrtps_c.h
+[25.996s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so
+[25.996s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_c.so" to ""
+[25.997s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[25.997s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[25.997s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_generator_cpp__visibility_control.hpp
+[25.997s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/wheel_pwm.hpp
+[25.997s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[25.997s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.hpp
+[25.998s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__struct.hpp
+[25.998s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__builder.hpp
+[25.998s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__traits.hpp
+[25.998s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[25.998s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[26.000s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[26.001s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[26.001s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/dds_fastrtps
+[26.001s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_fastrtps_cpp.hpp
+[26.001s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so
+[26.001s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cpp.so" to ""
+[26.001s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[26.001s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[26.001s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[26.002s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[26.002s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.c
+[26.002s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_introspection_c.h
+[26.002s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so
+[26.002s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_c.so" to ""
+[26.003s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so
+[26.003s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_c.so" to ""
+[26.004s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver
+[26.004s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg
+[26.005s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail
+[26.005s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__type_support.cpp
+[26.006s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver/msg/detail/wheel_pwm__rosidl_typesupport_introspection_cpp.hpp
+[26.006s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so
+[26.006s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cpp.so" to ""
+[26.006s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so
+[26.006s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_typesupport_cpp.so" to ""
+[26.006s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/pythonpath.sh
+[26.008s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/pythonpath.dsv
+[26.008s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/top_level.txt
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/dependency_links.txt
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/PKG-INFO
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver-0.1.0-py3.10.egg-info/SOURCES.txt
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[26.009s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[26.010s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_fastrtps_c.c
+[26.010s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/libstm32_nucleo_f303re_driver__rosidl_generator_py.so
+[26.010s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[26.010s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg
+[26.011s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm.py
+[26.011s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm_s.c
+[26.011s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/__init__.py
+[26.011s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_introspection_c.c
+[26.011s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/_stm32_nucleo_f303re_driver_s.ep.rosidl_typesupport_c.c
+[26.012s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/__init__.py
+[26.078s] Listing '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver'...
+[26.079s] Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/__init__.py'...
+[26.079s] Listing '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg'...
+[26.079s] Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/__init__.py'...
+[26.079s] Compiling '/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/msg/_wheel_pwm.py'...
+[26.106s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[26.106s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[26.106s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[26.107s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[26.108s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[26.109s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages/stm32_nucleo_f303re_driver/stm32_nucleo_f303re_driver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[26.110s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_py.so
+[26.110s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/libstm32_nucleo_f303re_driver__rosidl_generator_py.so" to ""
+[26.110s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/msg/WheelPwm.idl
+[26.111s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/msg/WheelPwm.msg
+[26.111s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/lib/stm32_nucleo_f303re_driver/stm_driver
+[26.111s] -- Set runtime path of "/root/ws/src/install/stm32_nucleo_f303re_driver/lib/stm32_nucleo_f303re_driver/stm_driver" to ""
+[26.111s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver//launch
+[26.111s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver//launch/burger_launch.py
+[26.112s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include
+[26.112s] -- Up-to-date: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver
+[26.112s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/include/stm32_nucleo_f303re_driver/parsing_types.hpp
+[26.113s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/package_run_dependencies/stm32_nucleo_f303re_driver
+[26.114s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/parent_prefix_path/stm32_nucleo_f303re_driver
+[26.114s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/ament_prefix_path.sh
+[26.114s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/ament_prefix_path.dsv
+[26.114s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/path.sh
+[26.115s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/environment/path.dsv
+[26.115s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.bash
+[26.116s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.sh
+[26.120s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.zsh
+[26.121s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/local_setup.dsv
+[26.121s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.dsv
+[26.121s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/ament_index/resource_index/packages/stm32_nucleo_f303re_driver
+[26.121s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cExport.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cExport-noconfig.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cExport.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_cppExport.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cppExport.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cExport.cmake
+[26.122s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[26.123s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cExport.cmake
+[26.123s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cExport-noconfig.cmake
+[26.123s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cppExport.cmake
+[26.123s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[26.124s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cppExport.cmake
+[26.124s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driver__rosidl_typesupport_cppExport-noconfig.cmake
+[26.124s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_pyExport.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/export_stm32_nucleo_f303re_driver__rosidl_generator_pyExport-noconfig.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake-extras.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/ament_cmake_export_targets-extras.cmake
+[26.125s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[26.126s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[26.126s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driverConfig.cmake
+[26.126s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/cmake/stm32_nucleo_f303re_driverConfig-version.cmake
+[26.126s] -- Installing: /root/ws/src/install/stm32_nucleo_f303re_driver/share/stm32_nucleo_f303re_driver/package.xml
+[26.129s] Invoked command in '/root/ws/src/build/stm32_nucleo_f303re_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /root/ws/src/build/stm32_nucleo_f303re_driver
