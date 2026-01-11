@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
 """
-@file teleop_launch.py
+@file burger_launch.py
 @brief Launch file for joystick teleoperation and robot control nodes.
 
-This launch description initializes:
-  - joy_node for game controller input
-  - teleop_twist_joy node for converting joystick input to Twist commands
-  - control_teleop node for wheel speed computation
-  - static and odom transform broadcasters
-  - micro-ROS agent for embedded communication via UDP6
 """
 import os
 
@@ -52,7 +46,7 @@ def generate_launch_description():
         ld.add_action(Node(
             package='joy',
             executable='joy_node',
-            name='game_controller',
+            name='joy',
             parameters=[{
                 'device_id': device_id,
                 'deadzone': 0.05,
@@ -89,14 +83,18 @@ def generate_launch_description():
             'scale_linear.z': 0.0,
             'axis_angular.yaw': 2,
             'scale_angular.yaw': 1.0,
-            'publish_stamped_twist': False
+            'publish_stamped_twist': False,
         }],
         remappings=[('/cmd_vel', '/joy/cmd_vel')],
         output='screen'
     ))
-
-    # -----------------------------------------------------------------------
-    # Control Teleop: custom node converting Twist to wheel commands
+    ld.add_action(Node(
+            package='joy_service_node',
+            executable='joy_service_node',
+            name='joy_service_handler',
+            parameters=[workspace_config_path],
+            output='screen'
+        ))
     ld.add_action(Node(
         package='stm32_nucleo_f303re_driver',
         executable='stm_driver',

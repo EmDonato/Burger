@@ -9,3 +9,8 @@ joy_teleop_twist_ref:
     max_vel: 0.463
     scales: 0.0
     wheel_base: 0.2
+
+joy_service_node:
+  ros__parameters:
+    arm_service: true
+    arm_button: 0
