@@ -1,0 +1,1 @@
+/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_ros_mqtt_bridge:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/joy_teleop_twist_ref:/opt/ros/humble

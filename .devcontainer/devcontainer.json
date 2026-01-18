@@ -8,7 +8,9 @@
         "--network=host",
         "--tty",
         "--privileged",
-        "--interactive"
+        "--interactive",
+        "--volume=/dev/input:/dev/input"
+
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/ws,type=bind",
     "workspaceFolder": "/root/ws",

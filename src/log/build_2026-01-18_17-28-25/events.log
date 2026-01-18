@@ -1,0 +1,124 @@
+[0.000000] (-) TimerEvent: {}
+[0.001530] (-) JobUnselected: {'identifier': 'joy_service_node'}
+[0.002366] (-) JobUnselected: {'identifier': 'joy_teleop_twist_ref'}
+[0.002504] (-) JobUnselected: {'identifier': 'realsense2_camera'}
+[0.002747] (-) JobUnselected: {'identifier': 'realsense2_camera_msgs'}
+[0.002793] (-) JobUnselected: {'identifier': 'realsense2_description'}
+[0.003462] (-) JobUnselected: {'identifier': 'realsense2_ros_mqtt_bridge'}
+[0.003592] (-) JobUnselected: {'identifier': 'realsense2_rviz_plugin'}
+[0.003829] (-) JobUnselected: {'identifier': 'stm32_nucleo_f303re_driver'}
+[0.003954] (lidar_driver) JobQueued: {'identifier': 'lidar_driver', 'dependencies': OrderedDict()}
+[0.007475] (lidar_driver) JobStarted: {'identifier': 'lidar_driver'}
+[0.030060] (lidar_driver) JobProgress: {'identifier': 'lidar_driver', 'progress': 'cmake'}
+[0.033377] (lidar_driver) JobProgress: {'identifier': 'lidar_driver', 'progress': 'build'}
+[0.034939] (lidar_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws/src/build/lidar_driver', '--', '-j4', '-l4'], 'cwd': '/root/ws/src/build/lidar_driver', 'env': OrderedDict([('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/root/ws/install/realsense2_camera/lib:/root/ws/install/realsense2_camera_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-9e0eaa43-e461-4c01-bdb9-081fd6868f51.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-841e10fe-aab9-431f-b45a-158b53b0c2a0.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-8a8071e4-a884-4197-9122-ea08db37e59a.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-8a8071e4-a884-4197-9122-ea08db37e59a.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-8a8071e4-a884-4197-9122-ea08db37e59a.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_ros_mqtt_bridge:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/joy_teleop_twist_ref:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/lidar_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/root/ws/build/realsense2_ros_mqtt_bridge:/root/ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:/root/ws/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/joy_teleop_twist_ref:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble')]), 'shell': False}
+[0.091428] (lidar_driver) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.098790] (-) TimerEvent: {}
+[0.200740] (-) TimerEvent: {}
+[0.305374] (-) TimerEvent: {}
+[0.406072] (-) TimerEvent: {}
+[0.438114] (lidar_driver) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.481711] (lidar_driver) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.485932] (lidar_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.498484] (lidar_driver) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.506222] (-) TimerEvent: {}
+[0.517417] (lidar_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.540121] (lidar_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.594887] (lidar_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.597794] (lidar_driver) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.606379] (-) TimerEvent: {}
+[0.707581] (-) TimerEvent: {}
+[0.739812] (lidar_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.807747] (-) TimerEvent: {}
+[0.816648] (lidar_driver) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.873316] (lidar_driver) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.907874] (-) TimerEvent: {}
+[1.009007] (-) TimerEvent: {}
+[1.042194] (lidar_driver) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.044550] (lidar_driver) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/root/ws/src/lidar_driver/include/lidar_driver>\n'}
+[1.045134] (lidar_driver) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.045963] (lidar_driver) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.049937] (lidar_driver) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.050415] (lidar_driver) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.051379] (lidar_driver) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.051906] (lidar_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.083869] (lidar_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[1.105517] (lidar_driver) StdoutLine: {'line': b'-- Build files have been written to: /root/ws/src/build/lidar_driver\n'}
+[1.109119] (-) TimerEvent: {}
+[1.153133] (lidar_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target lidar_driver\x1b[0m\n'}
+[1.182607] (lidar_driver) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/lidar_driver.dir/src/cmd_interface_linux.cpp.o\x1b[0m\n'}
+[1.183152] (lidar_driver) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/lidar_driver.dir/src/tofbf.cpp.o\x1b[0m\n'}
+[1.184383] (lidar_driver) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/lidar_driver.dir/src/lipkg.cpp.o\x1b[0m\n'}
+[1.210312] (-) TimerEvent: {}
+[1.310821] (-) TimerEvent: {}
+[1.413736] (-) TimerEvent: {}
+[1.514398] (-) TimerEvent: {}
+[1.615349] (-) TimerEvent: {}
+[1.719987] (-) TimerEvent: {}
+[1.820735] (-) TimerEvent: {}
+[1.921490] (-) TimerEvent: {}
+[2.023567] (-) TimerEvent: {}
+[2.124543] (-) TimerEvent: {}
+[2.226826] (-) TimerEvent: {}
+[2.307706] (lidar_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/root/ws/src/lidar_driver/src/lipkg.cpp:22\x1b[m\x1b[K:\n'}
+[2.315469] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/include/lidar_driver/lipkg.h:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KLiPkg::LiPkg(std::string)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.316622] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/include/lidar_driver/lipkg.h:72:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KLiPkg::is_frame_ready_\x1b[m\x1b[K\xe2\x80\x99 will be initialized after [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.317548] (lidar_driver) StderrLine: {'line': b'   72 |   bool \x1b[01;35m\x1b[Kis_frame_ready_\x1b[m\x1b[K;\n'}
+[2.318737] (lidar_driver) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.319005] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/include/lidar_driver/lipkg.h:71:8:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbool LiPkg::is_pkg_ready_\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.319196] (lidar_driver) StderrLine: {'line': b'   71 |   bool \x1b[01;35m\x1b[Kis_pkg_ready_\x1b[m\x1b[K;\n'}
+[2.319546] (lidar_driver) StderrLine: {'line': b'      |        \x1b[01;35m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.319704] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/src/lipkg.cpp:64:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K  when initialized here [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder\x07-Wreorder\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.319909] (lidar_driver) StderrLine: {'line': b'   64 | \x1b[01;35m\x1b[KLiPkg\x1b[m\x1b[K::LiPkg(std::string frame_id)\n'}
+[2.320060] (lidar_driver) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[2.326981] (-) TimerEvent: {}
+[2.327834] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/src/lipkg.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LiPkg::ToLaserscan(std::vector<PointData>)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.328225] (lidar_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/root/ws/src/lidar_driver/src/lipkg.cpp:251:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kunsigned int\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.328406] (lidar_driver) StderrLine: {'line': b'  251 |     if (index >= 0 && \x1b[01;35m\x1b[Kindex < beam_size\x1b[m\x1b[K) {\n'}
+[2.328560] (lidar_driver) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K~~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.427152] (-) TimerEvent: {}
+[2.528438] (-) TimerEvent: {}
+[2.629825] (-) TimerEvent: {}
+[2.731196] (-) TimerEvent: {}
+[2.836211] (-) TimerEvent: {}
+[2.937823] (-) TimerEvent: {}
+[2.941802] (lidar_driver) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX executable lidar_driver\x1b[0m\n'}
+[3.038033] (-) TimerEvent: {}
+[3.138795] (-) TimerEvent: {}
+[3.239652] (-) TimerEvent: {}
+[3.342035] (-) TimerEvent: {}
+[3.444471] (-) TimerEvent: {}
+[3.526808] (lidar_driver) StdoutLine: {'line': b'[100%] Built target lidar_driver\n'}
+[3.545068] (-) TimerEvent: {}
+[3.548299] (lidar_driver) CommandEnded: {'returncode': 0}
+[3.549195] (lidar_driver) JobProgress: {'identifier': 'lidar_driver', 'progress': 'install'}
+[3.566000] (lidar_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws/src/build/lidar_driver'], 'cwd': '/root/ws/src/build/lidar_driver', 'env': OrderedDict([('HOSTNAME', 'pi5'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/root/ws/install/stm32_nucleo_f303re_driver/lib:/root/ws/install/realsense2_camera/lib:/root/ws/install/realsense2_camera_msgs/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/root/ws'), ('TERM_PROGRAM_VERSION', '1.106.2'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-9e0eaa43-e461-4c01-bdb9-081fd6868f51.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('WAYLAND_DISPLAY', 'vscode-wayland-841e10fe-aab9-431f-b45a-158b53b0c2a0.sock'), ('COLCON_PREFIX_PATH', '/root/ws/install'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-8a8071e4-a884-4197-9122-ea08db37e59a.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-arm64/1e3c50d64110be466c0b4a45222e81d2c9352888/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('FASTRTPS_DEFAULT_PROFILES_FILE', '/opt/ros/humble/share/ros2/ros2_default_profile.xml'), ('XDG_RUNTIME_DIR', '/tmp/user/0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-8a8071e4-a884-4197-9122-ea08db37e59a.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/user/0/vscode-git-b1eb057432.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-8a8071e4-a884-4197-9122-ea08db37e59a.sock'), ('AMENT_PREFIX_PATH', '/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_ros_mqtt_bridge:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/joy_teleop_twist_ref:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X0'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/root/ws/src/build/lidar_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ws/install/stm32_nucleo_f303re_driver/local/lib/python3.10/dist-packages:/root/ws/build/realsense2_ros_mqtt_bridge:/root/ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:/root/ws/install/realsense2_camera_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/joy_teleop_twist_ref:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble')]), 'shell': False}
+[3.585551] (lidar_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.586064] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/lib/lidar_driver/lidar_driver\n'}
+[3.588041] (lidar_driver) StdoutLine: {'line': b'-- Set runtime path of "/root/ws/src/install/lidar_driver/lib/lidar_driver/lidar_driver" to ""\n'}
+[3.588494] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include\n'}
+[3.588674] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver\n'}
+[3.588810] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver/lipkg.h\n'}
+[3.588911] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver/cmd_interface_linux.h\n'}
+[3.590625] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver/tofbf.h\n'}
+[3.591255] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver/scan_data.h\n'}
+[3.591625] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/include/lidar_driver/pointdata.h\n'}
+[3.591776] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/ament_index/resource_index/package_run_dependencies/lidar_driver\n'}
+[3.591947] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/ament_index/resource_index/parent_prefix_path/lidar_driver\n'}
+[3.592092] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/environment/ament_prefix_path.sh\n'}
+[3.592211] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/environment/ament_prefix_path.dsv\n'}
+[3.592310] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/environment/path.sh\n'}
+[3.592406] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/environment/path.dsv\n'}
+[3.592579] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/local_setup.bash\n'}
+[3.592732] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/local_setup.sh\n'}
+[3.592839] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/local_setup.zsh\n'}
+[3.592912] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/local_setup.dsv\n'}
+[3.592985] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/package.dsv\n'}
+[3.593063] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/ament_index/resource_index/packages/lidar_driver\n'}
+[3.593142] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/cmake/lidar_driverConfig.cmake\n'}
+[3.593212] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/cmake/lidar_driverConfig-version.cmake\n'}
+[3.593338] (lidar_driver) StdoutLine: {'line': b'-- Installing: /root/ws/src/install/lidar_driver/share/lidar_driver/package.xml\n'}
+[3.599470] (lidar_driver) CommandEnded: {'returncode': 0}
+[3.644946] (-) TimerEvent: {}
+[3.671393] (lidar_driver) JobEnded: {'identifier': 'lidar_driver', 'rc': 0}
+[3.674150] (-) EventReactorShutdown: {}

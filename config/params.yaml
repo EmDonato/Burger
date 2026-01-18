@@ -14,3 +14,9 @@ joy_service_node:
   ros__parameters:
     arm_service: true
     arm_button: 0
+
+
+lidar_driver:
+  ros__parameters:
+    port: "/dev/ttyAMA0"
+
