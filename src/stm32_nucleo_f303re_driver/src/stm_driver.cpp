@@ -99,7 +99,7 @@ private:
     rclcpp::Service<stm32_nucleo_f303re_driver::srv::Arm>::SharedPtr srv_;
     rclcpp::TimerBase::SharedPtr timer_;
 
-    bool last_arm_state_ = false;
+    bool last_arm_state_ = true;
 
     void open_serial_()
     {
@@ -259,7 +259,9 @@ private:
             case HB_ID:
             {
                 if (payload_.empty()) return;
-                bool current_arm_state = (payload_[0] == 1);
+                uint32_t d[2];
+                std::memcpy(d, payload_.data(), 2 * sizeof(float));
+                bool current_arm_state = (d[1] == (uint32_t)1);
                 
                 if (current_arm_state != last_arm_state_) {
                     RCLCPP_INFO(this->get_logger(), "Robot Hardware Status: %s", 
@@ -271,6 +273,19 @@ private:
                 arm_pub_->publish(msg);
                 break;
             }
+            case STRING_ID:
+            {
+                if (payload_.empty()) return;
+
+                std::string msg(
+                    reinterpret_cast<const char*>(payload_.data()),
+                    payload_.size()
+                );
+
+                RCLCPP_INFO(this->get_logger(), "%s", msg.c_str());
+                break;
+            }
+
         }
     }
 

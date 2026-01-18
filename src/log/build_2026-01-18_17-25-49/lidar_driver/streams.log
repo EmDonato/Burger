@@ -1,0 +1,63 @@
+[0.012s] Invoking command in '/root/ws/src/build/lidar_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble /usr/bin/cmake /root/ws/src/lidar_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/lidar_driver
+[0.098s] -- The C compiler identification is GNU 11.4.0
+[0.190s] -- The CXX compiler identification is GNU 11.4.0
+[0.199s] -- Detecting C compiler ABI info
+[0.308s] -- Detecting C compiler ABI info - done
+[0.321s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.322s] -- Detecting C compile features
+[0.322s] -- Detecting C compile features - done
+[0.327s] -- Detecting CXX compiler ABI info
+[0.480s] -- Detecting CXX compiler ABI info - done
+[0.483s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.484s] -- Detecting CXX compile features
+[0.484s] -- Detecting CXX compile features - done
+[0.489s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.798s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.973s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[1.040s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.052s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.067s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.086s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.112s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.191s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.200s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.354s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.396s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.456s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.469s] -- Looking for pthread.h
+[1.590s] -- Looking for pthread.h - found
+[1.590s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.802s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.803s] -- Found Threads: TRUE  
+[1.932s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.003s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.169s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.169s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/root/ws/src/lidar_driver/include/lidar_driver>
+[2.170s] -- Configured cppcheck exclude dirs and/or files: 
+[2.171s] -- Added test 'lint_cmake' to check CMake code style
+[2.175s] -- Added test 'uncrustify' to check C / C++ code style
+[2.175s] -- Configured uncrustify additional arguments: 
+[2.175s] -- Added test 'xmllint' to check XML markup files
+[2.178s] -- Configuring done
+[2.195s] -- Generating done
+[2.201s] -- Build files have been written to: /root/ws/src/build/lidar_driver
+[2.225s] Invoked command in '/root/ws/src/build/lidar_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble /usr/bin/cmake /root/ws/src/lidar_driver -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/lidar_driver
+[2.229s] Invoking command in '/root/ws/src/build/lidar_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/lidar_driver -- -j4 -l4
+[2.310s] [ 50%] [32mBuilding CXX object CMakeFiles/lidar_driver.dir/src/main.cpp.o[0m
+[10.430s] [100%] [32m[1mLinking CXX executable lidar_driver[0m
+[10.866s] /usr/bin/ld: CMakeFiles/lidar_driver.dir/src/main.cpp.o: in function `LidarDriver::LidarDriver()::{lambda(char const*, unsigned long)#1}::operator()(char const*, unsigned long) const':
+[10.867s] main.cpp:(.text._ZZN11LidarDriverC4EvENKUlPKcmE_clES1_m[_ZZN11LidarDriverC4EvENKUlPKcmE_clES1_m]+0x5c): undefined reference to `LiPkg::Parse(unsigned char const*, long)'
+[10.867s] /usr/bin/ld: main.cpp:(.text._ZZN11LidarDriverC4EvENKUlPKcmE_clES1_m[_ZZN11LidarDriverC4EvENKUlPKcmE_clES1_m]+0x78): undefined reference to `LiPkg::AssemblePacket()'
+[10.868s] /usr/bin/ld: CMakeFiles/lidar_driver.dir/src/main.cpp.o: in function `LidarDriver::LidarDriver()':
+[10.869s] main.cpp:(.text._ZN11LidarDriverC2Ev[_ZN11LidarDriverC5Ev]+0xd8): undefined reference to `CmdInterfaceLinux::CmdInterfaceLinux()'
+[10.870s] /usr/bin/ld: main.cpp:(.text._ZN11LidarDriverC2Ev[_ZN11LidarDriverC5Ev]+0x114): undefined reference to `LiPkg::LiPkg(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+[10.870s] /usr/bin/ld: main.cpp:(.text._ZN11LidarDriverC2Ev[_ZN11LidarDriverC5Ev]+0x3e8): undefined reference to `CmdInterfaceLinux::Open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)'
+[10.870s] /usr/bin/ld: main.cpp:(.text._ZN11LidarDriverC2Ev[_ZN11LidarDriverC5Ev]+0xb20): undefined reference to `CmdInterfaceLinux::~CmdInterfaceLinux()'
+[10.870s] /usr/bin/ld: CMakeFiles/lidar_driver.dir/src/main.cpp.o: in function `LidarDriver::~LidarDriver()':
+[10.870s] main.cpp:(.text._ZN11LidarDriverD2Ev[_ZN11LidarDriverD5Ev]+0x44): undefined reference to `CmdInterfaceLinux::Close()'
+[10.870s] /usr/bin/ld: main.cpp:(.text._ZN11LidarDriverD2Ev[_ZN11LidarDriverD5Ev]+0x1ac): undefined reference to `CmdInterfaceLinux::~CmdInterfaceLinux()'
+[10.909s] collect2: error: ld returned 1 exit status
+[10.913s] gmake[2]: *** [CMakeFiles/lidar_driver.dir/build.make:175: lidar_driver] Error 1
+[10.914s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lidar_driver.dir/all] Error 2
+[10.915s] gmake: *** [Makefile:146: all] Error 2
+[10.922s] Invoked command in '/root/ws/src/build/lidar_driver' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble /usr/bin/cmake --build /root/ws/src/build/lidar_driver -- -j4 -l4
