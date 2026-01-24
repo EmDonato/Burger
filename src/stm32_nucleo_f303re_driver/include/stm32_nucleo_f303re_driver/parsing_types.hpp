@@ -13,7 +13,9 @@ enum MsgID : uint8_t {
     CMD_VEL_ID = 0x03,
     ARM_ID     = 0x04,
     HB_ID      = 0x05,
-    STRING_ID  = 0x06
+    STRING_ID  = 0x06,
+    RESET_ID  = 0x07
+
 };
 
 enum class ParseState {

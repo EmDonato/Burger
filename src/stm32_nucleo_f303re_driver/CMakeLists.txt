@@ -15,8 +15,8 @@ find_package(tf2 REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/WheelPwm.msg"
-  "srv/Arm.srv"
+  "msg/Wheelspeed.msg"
+  "srv/Cmd.srv"
   DEPENDENCIES builtin_interfaces std_msgs
 )
 

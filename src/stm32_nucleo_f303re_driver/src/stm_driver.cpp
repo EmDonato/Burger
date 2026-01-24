@@ -1,10 +1,11 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
+#include "stm32_nucleo_f303re_driver/msg/wheelspeed.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "geometry_msgs/msg/vector3.hpp"
 #include "sensor_msgs/msg/magnetic_field.hpp"
 #include "std_msgs/msg/bool.hpp"
-#include "stm32_nucleo_f303re_driver/srv/arm.hpp"
+#include "stm32_nucleo_f303re_driver/srv/cmd.hpp"
 
 #include <boost/circular_buffer.hpp>
 #include <chrono>
@@ -13,7 +14,6 @@
 
 #include "parsing_types.hpp"
 #include <tf2/LinearMath/Quaternion.h>
-
 #include <fcntl.h>
 #include <poll.h>
 #include <termios.h>
@@ -22,7 +22,7 @@
 class StmDriver : public rclcpp::Node
 {
 public:
-    StmDriver() : Node("stm32_driver")
+    StmDriver() : Node("stm32_driver"),verbal_logger(this->get_logger().get_child("verbal_logger"))
     {
         // Parameter declaration
         this->declare_parameter("port", "/dev/ttyACM0");
@@ -41,6 +41,7 @@ public:
         // Publishers initialization
         imu_pub_ = create_publisher<sensor_msgs::msg::Imu>("imu", rclcpp::SensorDataQoS());
         enc_pub_ = create_publisher<geometry_msgs::msg::Twist>("enc/twist", rclcpp::SensorDataQoS());
+        wheels_pub_ = create_publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>("enc/twist_wheels", rclcpp::SensorDataQoS());
         mag_pub_ = create_publisher<sensor_msgs::msg::MagneticField>("magnetometer", rclcpp::SensorDataQoS());
         
         // Transient Local QoS ensures the last state is available to new subscribers
@@ -55,15 +56,15 @@ public:
         );    
 
         // Services
-        srv_ = this->create_service<stm32_nucleo_f303re_driver::srv::Arm>(
-            "arm",
-            std::bind(&StmDriver::handle_arm_service, this, std::placeholders::_1, std::placeholders::_2));
+        srv_ = this->create_service<stm32_nucleo_f303re_driver::srv::Cmd>(
+            "cmd",
+            std::bind(&StmDriver::handle_service, this, std::placeholders::_1, std::placeholders::_2));
 
         // Main Timer Loop (200Hz)
         timer_ = create_wall_timer(
             std::chrono::milliseconds(5),
             std::bind(&StmDriver::read_serial_, this));
-
+        send_command(static_cast<uint8_t>(RESET_ID));
         RCLCPP_INFO(this->get_logger(), "STM32 Driver started on %s @ %d baud", port_.c_str(), baudrate_);
     }
 
@@ -76,13 +77,14 @@ public:
     }
 
 private:
+    rclcpp::Logger verbal_logger;
     std::string port_;
     int baudrate_;
     int serial_fd_{-1};
     pollfd pfd_{};
     uint8_t tmp_buf_[128];
     boost::circular_buffer<uint8_t> rx_buffer_{512};
-
+    float radius = 0.0346f ;
     // Parser State Machine
     ParseState state_{ParseState::WAIT_HEADER1};
     uint8_t msg_type_{0};
@@ -95,8 +97,9 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr mag_pub_;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr enc_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr arm_pub_;
+    rclcpp::Publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>::SharedPtr wheels_pub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr ref_sub_;
-    rclcpp::Service<stm32_nucleo_f303re_driver::srv::Arm>::SharedPtr srv_;
+    rclcpp::Service<stm32_nucleo_f303re_driver::srv::Cmd>::SharedPtr srv_;
     rclcpp::TimerBase::SharedPtr timer_;
 
     bool last_arm_state_ = true;
@@ -244,15 +247,27 @@ private:
             }
 
             case ENC_ID:
-            {
+            {    
+
                 if (payload_.size() < 2 * sizeof(float)) return;
                 float d[2];
                 std::memcpy(d, payload_.data(), 2 * sizeof(float));
-
+                float d_custom[4];
+                std::memcpy(d_custom, payload_.data() + (2 * sizeof(float)), 4 * sizeof(float));
+                auto custom_msg = stm32_nucleo_f303re_driver::msg::Wheelspeed();
                 auto twist = geometry_msgs::msg::Twist();
+                custom_msg.header.stamp = this->now();
+                custom_msg.header.frame_id = "";
                 twist.linear.x = d[0];
                 twist.angular.z = d[1];
+                
+                custom_msg.speed[0] = d_custom[0]*2*M_PI*radius/60;
+                custom_msg.speed[1] = d_custom[1]*2*M_PI*radius/60;
+                custom_msg.pwm[2] = d_custom[2];
+                custom_msg.pwm[3] = d_custom[3];
                 enc_pub_->publish(twist);
+                wheels_pub_->publish(custom_msg);
+
                 break;
             }
 
@@ -282,7 +297,7 @@ private:
                     payload_.size()
                 );
 
-                RCLCPP_INFO(this->get_logger(), "%s", msg.c_str());
+                RCLCPP_INFO(verbal_logger, "%s", msg.c_str());
                 break;
             }
 
@@ -306,20 +321,19 @@ private:
 
         write(serial_fd_, packet.data(), packet.size());
     }
-    void send_arm_command(uint8_t command)
+    void send_command(uint8_t command)
     {
         uint8_t hdr1 = 0xAA;
         uint8_t hdr2 = 0x55;
-        uint8_t len = 0;      // Il firmware gestisce ARM_ID anche con len 0
-        uint8_t type = ARM_ID;
+        uint8_t len = 0;      
+        uint8_t type = command;
 
-        // Calcolo checksum come da firmware
         uint8_t checksum = hdr1;
         checksum ^= hdr2;
-        checksum ^= len;    // LEN viene prima di TYPE nel firmware
+        checksum ^= len;    
         checksum ^= type;
 
-        // ORDINE CORRETTO: HDR1, HDR2, LEN, TYPE, CS
+        
         uint8_t packet[5] = {hdr1, hdr2, len, type, checksum};
 
         tcflush(serial_fd_, TCOFLUSH); 
@@ -327,16 +341,20 @@ private:
         
         RCLCPP_INFO(this->get_logger(), "Sent ARM command to STM32. CS: 0x%02X", checksum);
     }
-
-    void handle_arm_service(
-        const std::shared_ptr<stm32_nucleo_f303re_driver::srv::Arm::Request> req,
-        std::shared_ptr<stm32_nucleo_f303re_driver::srv::Arm::Response> res)
+    void handle_service(
+        const std::shared_ptr<stm32_nucleo_f303re_driver::srv::Cmd::Request> req,
+        std::shared_ptr<stm32_nucleo_f303re_driver::srv::Cmd::Response> res)
     {
-        // Command 1 = Arm, Command 0 = Disarm
+        // Command 1 = Arm, Command 0 = Disarm //command 2 = reset
         if (req->command == 1 || req->command == 0) {
-            send_arm_command(static_cast<uint8_t>(req->command));
+            send_command(static_cast<uint8_t>(ARM_ID));
             res->success = true;
-        } else {
+        }else if(req->command == 2){
+            send_command(static_cast<uint8_t>(RESET_ID));
+            res->success = true;    
+            RCLCPP_INFO(this->get_logger(), "Reset sent");
+        }
+         else {
             RCLCPP_WARN(this->get_logger(), "Invalid Service Command: %d", req->command);
             res->success = false;
         }
