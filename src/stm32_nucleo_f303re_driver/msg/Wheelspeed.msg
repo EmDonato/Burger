@@ -5,4 +5,5 @@ std_msgs/Header header
 # Convention:
 # pwm[0] -> left wheel
 # pwm[1] -> right wheel
+float32[] speed
 int32[] pwm
