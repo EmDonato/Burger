@@ -6,22 +6,25 @@
 
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.actions import TimerAction
+
 
 def generate_launch_description():
 
     workspace_config_path = '/root/ws/config/params.yaml'
+    urdf_file = '/root/ws/src/robot_descriptor/urdf/burger.urdf'
 
     ld = LaunchDescription()
 
     # -----------------------------------------------------------------------
-    # Joystick driver (robusto: respawn se il device non è pronto)
+    # Joystick driver
     ld.add_action(
         Node(
             package='joy',
             executable='joy_node',
             name='joy',
             parameters=[{
-                'device_id': 0,              # /dev/input/js0
+                'device_id': 0,
                 'deadzone': 0.05,
                 'autorepeat_rate': 0.0,
                 'sticky_buttons': False,
@@ -72,7 +75,7 @@ def generate_launch_description():
     )
 
     # -----------------------------------------------------------------------
-    # STM32 driver (USB: /dev/ttyACM0)
+    # STM32 driver
     ld.add_action(
         Node(
             package='stm32_nucleo_f303re_driver',
@@ -84,7 +87,7 @@ def generate_launch_description():
     )
 
     # -----------------------------------------------------------------------
-    # LiDAR driver (GPIO UART: /dev/serial0)
+    # LiDAR driver
     ld.add_action(
         Node(
             package='lidar_driver',
@@ -106,5 +109,20 @@ def generate_launch_description():
             output='screen'
         )
     )
+
+    # -----------------------------------------------------------------------
+    # Robot state publisher
+    ld.add_action(
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            parameters=[{
+                'robot_description': open(urdf_file).read()
+            }],
+            output='screen'
+        )
+    )
+
+
 
     return ld
