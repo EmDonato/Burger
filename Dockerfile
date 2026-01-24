@@ -23,6 +23,10 @@ RUN apt-get update && apt-get install -y \
     ros-humble-cv-bridge \
     ros-humble-camera-info-manager \
     \
+    ros-humble-robot-state-publisher \
+    ros-humble-joint-state-publisher \
+    ros-humble-tf2-tools \
+    \
     libopencv-dev \
     libboost-dev \
     python3-opencv \
