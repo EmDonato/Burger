@@ -8,14 +8,12 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-# 1. Trova esplicitamente il pacchetto del driver
 find_package(stm32_nucleo_f303re_driver REQUIRED)
 
 add_executable(joy_service_node
   src/joy_service_node.cpp
 )
 
-# 2. Collega le dipendenze (assicurati che il driver sia qui)
 ament_target_dependencies(joy_service_node
   rclcpp
   sensor_msgs

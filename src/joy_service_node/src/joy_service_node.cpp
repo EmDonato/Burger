@@ -1,6 +1,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/joy.hpp>
-#include "stm32_nucleo_f303re_driver/srv/arm.hpp"
+#include "stm32_nucleo_f303re_driver/srv/cmd.hpp"
 
 class JoyServiceNode : public rclcpp::Node {
 public:
@@ -10,7 +10,7 @@ public:
 
         update_parameters();
 
-        client_ = this->create_client<stm32_nucleo_f303re_driver::srv::Arm>("/arm");
+        client_ = this->create_client<stm32_nucleo_f303re_driver::srv::Cmd>("/cmd");
 
         joy_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
             "joy", 10, std::bind(&JoyServiceNode::joy_callback, this, std::placeholders::_1));
@@ -58,13 +58,13 @@ private:
             return;
         }
 
-        auto request = std::make_shared<stm32_nucleo_f303re_driver::srv::Arm::Request>();
+        auto request = std::make_shared<stm32_nucleo_f303re_driver::srv::Cmd::Request>();
         request->command = 1;
 
         RCLCPP_INFO(this->get_logger(), ">> Sending ARM Toggle Request...");
         
         client_->async_send_request(request, 
-            [this](rclcpp::Client<stm32_nucleo_f303re_driver::srv::Arm>::SharedFuture future) {
+            [this](rclcpp::Client<stm32_nucleo_f303re_driver::srv::Cmd>::SharedFuture future) {
                 try {
                     auto response = future.get();
                     if (response->success) {
@@ -79,7 +79,7 @@ private:
     }
 
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
-    rclcpp::Client<stm32_nucleo_f303re_driver::srv::Arm>::SharedPtr client_;
+    rclcpp::Client<stm32_nucleo_f303re_driver::srv::Cmd>::SharedPtr client_;
     
     int arm_button_;
     bool arm_service_;
