@@ -45,7 +45,7 @@ def generate_launch_description():
             name='teleop_twist_joy',
             parameters=[{
                 'require_enable_button': True,
-                'enable_button': 10,
+                'enable_button': 5,
                 'enable_turbo_button': -1,
                 'axis_linear.x': 1,
                 'axis_linear.y': 2,

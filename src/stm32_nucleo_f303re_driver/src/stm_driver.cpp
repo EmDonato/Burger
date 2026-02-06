@@ -6,6 +6,7 @@
 #include "sensor_msgs/msg/magnetic_field.hpp"
 #include "std_msgs/msg/bool.hpp"
 #include "stm32_nucleo_f303re_driver/srv/cmd.hpp"
+#include "geometry_msgs/msg/twist_stamped.hpp"
 
 #include <boost/circular_buffer.hpp>
 #include <chrono>
@@ -40,7 +41,7 @@ public:
 
         // Publishers initialization
         imu_pub_ = create_publisher<sensor_msgs::msg::Imu>("imu", rclcpp::SensorDataQoS());
-        enc_pub_ = create_publisher<geometry_msgs::msg::Twist>("enc/twist", rclcpp::SensorDataQoS());
+        enc_pub_ = create_publisher<geometry_msgs::msg::TwistStamped>("enc/twist_meas", rclcpp::SensorDataQoS());
         wheels_pub_ = create_publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>("enc/twist_wheels", rclcpp::SensorDataQoS());
         mag_pub_ = create_publisher<sensor_msgs::msg::MagneticField>("magnetometer", rclcpp::SensorDataQoS());
         
@@ -95,7 +96,7 @@ private:
     // ROS 2 Interfaces
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
     rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr mag_pub_;
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr enc_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr enc_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr arm_pub_;
     rclcpp::Publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>::SharedPtr wheels_pub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr ref_sub_;
@@ -248,24 +249,40 @@ private:
 
             case ENC_ID:
             {    
+                constexpr size_t EXPECTED_LEN =
+                    4 + (2 + 4) * sizeof(float); // = 28 byte
 
-                if (payload_.size() < 2 * sizeof(float)) return;
+                if (payload_.size() < EXPECTED_LEN) {
+                    RCLCPP_ERROR(
+                        this->get_logger(),
+                        "ENC payload too short: %zu < %zu",
+                        payload_.size(), EXPECTED_LEN
+                    );
+                    break;
+                }
                 float d[2];
-                std::memcpy(d, payload_.data(), 2 * sizeof(float));
+                std::memcpy(d, payload_.data()+4, 2 * sizeof(float));
                 float d_custom[4];
-                std::memcpy(d_custom, payload_.data() + (2 * sizeof(float)), 4 * sizeof(float));
+                std::memcpy(d_custom, payload_.data() + 4+(2 * sizeof(float)), 4 * sizeof(float));
                 auto custom_msg = stm32_nucleo_f303re_driver::msg::Wheelspeed();
-                auto twist = geometry_msgs::msg::Twist();
+                auto meas_twist = geometry_msgs::msg::TwistStamped();
+                meas_twist.header.stamp = this->now();
+                meas_twist.header.frame_id = "base_link";
                 custom_msg.header.stamp = this->now();
                 custom_msg.header.frame_id = "";
-                twist.linear.x = d[0];
-                twist.angular.z = d[1];
+                meas_twist.twist.linear.x = d[0];
+                meas_twist.twist.angular.z = d[1];
                 
                 custom_msg.speed[0] = d_custom[0]*2*M_PI*radius/60;
                 custom_msg.speed[1] = d_custom[1]*2*M_PI*radius/60;
-                custom_msg.pwm[2] = d_custom[2];
-                custom_msg.pwm[3] = d_custom[3];
-                enc_pub_->publish(twist);
+                //float vl = d_custom[0]*2*M_PI*radius/60;
+                //float vr  = d_custom[1]*2*M_PI*radius/60;
+                custom_msg.pwm[0] = d_custom[2];
+                custom_msg.pwm[1] = d_custom[3];
+                enc_pub_->publish(meas_twist);
+                        //RCLCPP_INFO(this->get_logger(), "vl %f vr %f ", vl, vr);
+                        //RCLCPP_INFO(this->get_logger(), "pwm_l %f pwm_r %f ", d_custom[2], d_custom[3]);
+
                 wheels_pub_->publish(custom_msg);
 
                 break;
