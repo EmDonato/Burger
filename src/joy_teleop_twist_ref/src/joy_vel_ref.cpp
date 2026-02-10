@@ -10,8 +10,8 @@ public:
         // ===============================
         // Parameters
         // ===============================
-        this->declare_parameter("max_vel", 0.463);     // [m/s]
-        this->declare_parameter("scales", 0.8);        // [0..1]
+        this->declare_parameter("max_vel", 0.30);     // [m/s]
+        this->declare_parameter("scales", 1.0);        // [0..1]
         this->declare_parameter("wheel_base", 0.2);    // [m]
 
         max_vel_    = this->get_parameter("max_vel").as_double();
