@@ -9,15 +9,15 @@
         "--tty",
         "--privileged",
         "--interactive",
-        "--volume=/dev/input:/dev/input"
+        "--volume=/dev/input:/dev/input",
+
 
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/ws,type=bind",
     "workspaceFolder": "/root/ws",
     "containerEnv": {
-        "FASTRTPS_DEFAULT_PROFILES_FILE": "/opt/ros/humble/share/ros2/ros2_default_profile.xml"
+        "FASTRTPS_DEFAULT_PROFILES_FILE": "/opt/ros/humble/share/ros2/ros2_default_profile.xml",
     },
-
     "customizations": {
         "vscode": {
             "extensions": [

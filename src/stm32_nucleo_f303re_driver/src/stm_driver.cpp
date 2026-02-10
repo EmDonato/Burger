@@ -249,44 +249,35 @@ private:
 
             case ENC_ID:
             {    
-                constexpr size_t EXPECTED_LEN =
-                    4 + (2 + 4) * sizeof(float); // = 28 byte
+                constexpr size_t EXPECTED_LEN = 28; 
 
                 if (payload_.size() < EXPECTED_LEN) {
-                    RCLCPP_ERROR(
-                        this->get_logger(),
-                        "ENC payload too short: %zu < %zu",
-                        payload_.size(), EXPECTED_LEN
-                    );
+                    RCLCPP_ERROR(this->get_logger(), "Payload troppo corto: %zu", payload_.size());
                     break;
                 }
-                float d[2];
-                std::memcpy(d, payload_.data()+4, 2 * sizeof(float));
-                float d_custom[4];
-                std::memcpy(d_custom, payload_.data() + 4+(2 * sizeof(float)), 4 * sizeof(float));
+
+                float f_data[4];
+                std::memcpy(f_data, payload_.data() + 4, 4 * sizeof(float));
+
+                uint32_t pwm_data[2];
+                std::memcpy(pwm_data, payload_.data() + 4 + (4 * sizeof(float)), 2 * sizeof(uint32_t));
+
                 auto custom_msg = stm32_nucleo_f303re_driver::msg::Wheelspeed();
-                auto meas_twist = geometry_msgs::msg::TwistStamped();
-                meas_twist.header.stamp = this->now();
-                meas_twist.header.frame_id = "base_link";
                 custom_msg.header.stamp = this->now();
-                custom_msg.header.frame_id = "";
-                meas_twist.twist.linear.x = d[0];
-                meas_twist.twist.angular.z = d[1];
-                
-                custom_msg.speed[0] = d_custom[0]*2*M_PI*radius/60;
-                custom_msg.speed[1] = d_custom[1]*2*M_PI*radius/60;
-                //float vl = d_custom[0]*2*M_PI*radius/60;
-                //float vr  = d_custom[1]*2*M_PI*radius/60;
-                custom_msg.pwm[0] = d_custom[2];
-                custom_msg.pwm[1] = d_custom[3];
-                enc_pub_->publish(meas_twist);
-                        //RCLCPP_INFO(this->get_logger(), "vl %f vr %f ", vl, vr);
-                        //RCLCPP_INFO(this->get_logger(), "pwm_l %f pwm_r %f ", d_custom[2], d_custom[3]);
+
+                custom_msg.speed[0] = f_data[2] * 2 * M_PI * radius / 60.0;
+                custom_msg.speed[1] = f_data[3] * 2 * M_PI * radius / 60.0;
+
+                custom_msg.pwm[0] = pwm_data[0];
+                custom_msg.pwm[1] = pwm_data[1];
+
+                RCLCPP_INFO(this->get_logger(), "V_L: %.3f | PWM_L: %u | PWM_R: %u", 
+                            custom_msg.speed[0], custom_msg.pwm[0], custom_msg.pwm[1]);
 
                 wheels_pub_->publish(custom_msg);
-
                 break;
             }
+            
 
             case HB_ID:
             {
