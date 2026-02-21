@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- DEPTH CAMERA -->
+
+    <joint name="camera_depth_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="camera_depth_link"/>
+        <origin xyz="0.140 0 0.12" rpy="0 0 0"/>
+    </joint>
+
+    <link name="camera_depth_link">
+        <visual>
+            <origin xyz="0.0 0 0.0" rpy="${pi} ${2*pi} ${pi/2}"/>
+            <geometry>
+                <mesh filename="package://robot_descriptor/meshes/d435i.stl"
+                      scale="0.001 0.001 0.001"/>          
+           </geometry>
+            <material name="grey"/>
+        </visual>
+    </link>
+
+
+</robot>

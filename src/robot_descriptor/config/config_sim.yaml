@@ -1,0 +1,5 @@
+joy_teleop_twist_ref:
+  ros__parameters:
+    max_vel: 0.20
+    scales: 1.0
+    wheel_base: 0.2

@@ -24,10 +24,6 @@ install(TARGETS joy_vel_ref
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY include/
-  DESTINATION include
-)
-
 
 
 if(BUILD_TESTING)

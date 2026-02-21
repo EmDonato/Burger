@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <parent link="camera_depth_link"/>
+    <child link="camera_depth_optical_frame"/>
+    <origin xyz="0.02 0.02 0.035"
+            rpy="-1.570796 0 -1.570796"/>
+  </joint>
+
+  <link name="camera_depth_optical_frame"/>
+
+  <joint name="camera_color_optical_joint" type="fixed">
+    <parent link="camera_depth_optical_frame"/>
+    <child link="camera_color_optical_frame"/>
+    <origin xyz="-0.0148 0 0"
+            rpy="0 0 0"/>
+  </joint>
+
+  <link name="camera_color_optical_frame"/>
+
+  <gazebo reference="camera_depth_link">
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <self_collide>false</self_collide>
+
+    <sensor name="d435i_depth" type="rgbd_camera">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>true</visualize> <topic>camera/rgbd</topic> <camera>
+        <horizontal_fov>1.518</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>8.0</far>
+        </clip>
+        
+        <optical_frame_id>camera_depth_optical_frame</optical_frame_id>
+      </camera>
+
+      <gz_frame_id>camera_depth_link</gz_frame_id>
+      <camera_info_topic>camera/rgbd/camera_info</camera_info_topic>
+      <depth_topic>camera/rgbd/depth_image</depth_topic>
+      <points_topic>camera/rgbd/points</points_topic>
+
+    </sensor>
+  </gazebo>
+
+</robot>

@@ -23,7 +23,7 @@ public:
         // ===============================
         pub_ = this->create_publisher<geometry_msgs::msg::Twist>(
             "cmd_vel",
-            rclcpp::SensorDataQoS()
+            rclcpp::QoS(10)//rclcpp::SensorDataQoS()
         );
 
         sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
