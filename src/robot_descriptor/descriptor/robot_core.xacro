@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="inertial_macros.xacro"/>
+
+  <!-- ================= PROPERTIES ================= -->
+
+  <xacro:property name="chassis_length" value="0.24"/>
+  <xacro:property name="chassis_width"  value="0.16"/>
+  <xacro:property name="chassis_height" value="0.123"/>
+  <xacro:property name="chassis_mass"   value="2.5"/>
+
+  <xacro:property name="wheel_radius"     value="0.0346"/>
+  <xacro:property name="wheel_thickness"  value="0.026"/>
+  <xacro:property name="wheel_mass"       value="0.15"/>
+  <xacro:property name="wheel_offset_x"   value="0.0"/>
+  <xacro:property name="wheel_offset_y"   value="0.1"/>
+  <xacro:property name="wheel_offset_z"   value="0.005"/>
+
+  <xacro:property name="caster_wheel_radius" value="0.01"/>
+  <xacro:property name="caster_wheel_mass"   value="0.1"/>
+  <xacro:property name="caster_wheel_offset_x" value="0.075"/>
+  <xacro:property name="caster_wheel_offset_z"
+                  value="${wheel_offset_z - wheel_radius + caster_wheel_radius -0.024}"/>
+
+  <!-- ================= MATERIALS ================= -->
+
+  <material name="white">
+    <color rgba="1 1 1 0.95"/>
+  </material>
+
+  <material name="orange">
+    <color rgba="1 0.3 0.1 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.2 0.2 1 0.9"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 0.9"/>
+  </material>
+ <material name="light_black">
+    <color rgba="0.1 0.1 0.1 0.999"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1 0 0 0.9"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0 0.8 0 0.95"/>
+  </material>
+
+  <material name="grey">
+    <color rgba="0.647 0.647 0.647 0.95"/>
+  </material>
+
+  <!-- ================= BASE LINK ================= -->
+
+  <link name="base_link"/>
+
+  <!-- ================= BASE FOOTPRINT ================= -->
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_footprint"/>
+
+  <!-- ================= CHASSIS ================= -->
+
+  <joint name="chassis_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin xyz="0.045 0 ${wheel_radius+0.02}"/>
+  </joint>
+
+  <link name="chassis">
+
+    <visual>
+      <origin xyz="0 0.0035 0" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://robot_descriptor/meshes/chassis.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="light_black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 ${2*wheel_radius}"/>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+    </collision>
+
+    <xacro:inertial_box mass="2.5"
+                        x="${chassis_length}"
+                        y="${chassis_width}"
+                        z="${chassis_height}">
+        <origin xyz="${chassis_length/10} 0 ${chassis_height/2}" rpy="0 0 0"/>
+    </xacro:inertial_box>
+
+  </link>
+
+  <gazebo reference="chassis">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- ================= IMU ================= -->
+
+  <joint name="IMU" type="fixed">
+    <parent link="chassis"/>
+    <child link="imu"/>
+    <origin xyz="-0.025 0 0.09" rpy="0 0 0"/>
+  </joint>
+
+    <link name="imu">
+
+    <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0"
+                iyy="1e-6" iyz="0"
+                izz="1e-6"/>
+    </inertial>
+
+    </link>
+
+ <gazebo reference="imu">
+  <sensor name="bno055" type="imu">
+    <always_on>1</always_on>
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <update_rate>100</update_rate>
+    <visualize>true</visualize>
+    <topic>imu</topic>
+    <ignition_frame_id>imu</ignition_frame_id>
+    <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+    </plugin>
+    <imu>
+      <angular_velocity>
+        <x><noise type="gaussian"><mean>0.0</mean><stddev>2e-4</stddev></noise></x>
+        <y><noise type="gaussian"><mean>0.0</mean><stddev>2e-4</stddev></noise></y>
+        <z><noise type="gaussian"><mean>0.0</mean><stddev>2e-4</stddev></noise></z>
+      </angular_velocity>
+      <linear_acceleration>
+        <x><noise type="gaussian"><mean>0.0</mean><stddev>1.7e-2</stddev></noise></x>
+        <y><noise type="gaussian"><mean>0.0</mean><stddev>1.7e-2</stddev></noise></y>
+        <z><noise type="gaussian"><mean>0.0</mean><stddev>1.7e-2</stddev></noise></z>
+      </linear_acceleration>
+    </imu>
+  </sensor>
+</gazebo>
+  <!-- ================= LEFT WHEEL ================= -->
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 ${wheel_offset_y} ${wheel_radius}" rpy="-${pi/2} 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="left_wheel">
+
+    <visual>
+      <origin xyz="0 0 -${wheel_offset_y}"
+              rpy="1.5708 -1.5708 -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://robot_descriptor/meshes/wheel.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_thickness}"/>
+      </geometry>
+    </collision>
+
+    <xacro:inertial_cylinder mass="${wheel_mass}"
+                             length="${wheel_thickness}"
+                             radius="${wheel_radius}">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+
+  </link>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- ================= RIGHT WHEEL ================= -->
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -${wheel_offset_y} ${wheel_radius}" rpy="${pi/2} 0 0"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+
+  <link name="right_wheel">
+
+    <visual>
+      <origin xyz="0 0 -${wheel_offset_y}"
+              rpy="1.5708 -1.5708 -${pi/2}"/>
+      <geometry>
+        <mesh filename="package://robot_descriptor/meshes/wheel.stl"
+              scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+
+    <collision>
+      <geometry>
+        <cylinder radius="${wheel_radius}"
+                  length="${wheel_thickness}"/>
+      </geometry>
+    </collision>
+
+    <xacro:inertial_cylinder mass="${wheel_mass}"
+                             length="${wheel_thickness}"
+                             radius="${wheel_radius}">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_cylinder>
+
+  </link>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- ================= CASTER ================= -->
+
+  <joint name="caster_wheel_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="caster_wheel"/>
+    <origin xyz="${caster_wheel_offset_x} 0 ${caster_wheel_offset_z}"/>
+  </joint>
+
+  <link name="caster_wheel">
+
+    <collision>
+      <geometry>
+        <sphere radius="${caster_wheel_radius}"/>
+      </geometry>
+    </collision>
+
+    <xacro:inertial_sphere mass="${caster_wheel_mass}"
+                           radius="${caster_wheel_radius}">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </xacro:inertial_sphere>
+
+  </link>
+
+  <gazebo reference="caster_wheel">
+    <material>Gazebo/White</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+    <gazebo>
+    <plugin filename="ignition-gazebo-pose-publisher-system" name="ignition::gazebo::systems::PosePublisher">
+        <publish_link_pose>true</publish_link_pose>
+        <use_pose_vector_msg>true</use_pose_vector_msg>
+        <static_publisher>true</static_publisher>
+        <static_update_frequency>10</static_update_frequency>
+    </plugin>
+    </gazebo>
+
+
+  <gazebo>
+    <plugin
+        filename="gz-sim-diff-drive-system"
+        name="gz::sim::systems::DiffDrive">
+
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+
+      <wheel_separation>0.20</wheel_separation>
+      <wheel_radius>0.0346</wheel_radius>
+
+      <topic>cmd_vel</topic>
+
+      <odom_topic>odom</odom_topic>
+      <tf_topic>tf</tf_topic>
+
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+
+      <publish_odom>true</publish_odom>
+      <publish_tf>true</publish_tf>
+
+    </plugin>
+  </gazebo>
+</robot>
