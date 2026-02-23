@@ -179,7 +179,9 @@ This will start:
 ---
 
 ## 6.2 Simulation
+---
 ![Burger Robot sim](docs/img/Burger_sim.jpg)
+---
 Run Gazebo simulation:
 
 ```
