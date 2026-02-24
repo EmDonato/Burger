@@ -278,9 +278,9 @@ odom
            ├── imu
            ├── camera_depth_link
            │     └── camera_depth_optical_frame
-           ├── camera_rgb_link
-           │     └── camera_rgb_optical_link
-           └── camera_color_optical_frame
+           |         └── camera_color_optical_frame
+           └── camera_rgb_link
+                 └── camera_rgb_optical_link
 ```
 
 ---
