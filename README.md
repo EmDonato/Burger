@@ -183,20 +183,21 @@ This will start:
 
 topic list
 ``` bash
-/camera/rgb/camera_info
-/camera/rgb/image_raw
-/camera/rgbd/camera_info
-/camera/rgbd/image_raw
-/clock
+/burger/realsense/depth/camera_info
+/burger/realsense/depth/image_rect_raw
+/burger/realsense/depth/metadata
 /cmd_vel
+/enc/twist_meas
+/enc/twist_wheels
 /imu
 /joint_states
 /joy
 /joy/cmd_vel
 /joy/set_feedback
-/odom
+/magnetometer
 /parameter_events
 /robot_description
+/robot_status/is_armed
 /rosout
 /scan
 /tf
