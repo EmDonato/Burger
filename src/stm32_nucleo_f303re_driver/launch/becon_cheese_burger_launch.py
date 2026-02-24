@@ -151,26 +151,31 @@ def generate_launch_description():
             executable='joint_state_publisher'
         )
     )
-    # -----------------------------------------------------------------------
-    # Lidar    
-    ld.add_action(
-       Node(
-            package='lidar_driver',
-            executable='lidar_driver'
-        )
-    )
+
 # -----------------------------------------------------------------------
     # RealSense Camera (Depth Only + Low Res Color)
-    realsense_launch_dir = os.path.join(get_package_share_directory('realsense2_camera'), 'launch')
-    
-    realsense_node = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(realsense_launch_dir, 'rs_launch.py')),
-        launch_arguments={
-                    'camera_name': 'realsense',
-                    'camera_namespace': 'burger',
-                    'config_file': workspace_config_path
-                }.items()
+    realsense_node = Node(
+        package='realsense2_camera',
+        executable='realsense2_camera_node',
+        name='realsense',
+        namespace='burger',
+        parameters=[{
+            'enable_color': False,
+            'enable_depth': True,
+            'depth_module.depth_profile': '640x480x30',
+            'align_depth.enable': False,
+            'pointcloud.enable': False,
+            'enable_infra': False,
+            'enable_infra1': False,
+            'enable_infra2': False,
+            'pointcloud.allow_no_texture_points': False,
+            'enable_gyro': False,
+            'enable_accel': False,
+            'decimation_filter.enable': True,
+        }],
+        output='screen'
     )
+
     ld.add_action(realsense_node)
 
     return ld

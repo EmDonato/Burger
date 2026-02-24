@@ -148,13 +148,6 @@ def generate_launch_description():
             executable='joint_state_publisher'
         )
     )
-    # -----------------------------------------------------------------------
-    # Lidar    
-    ld.add_action(
-       Node(
-            package='lidar_driver',
-            executable='lidar_driver'
-        )
-    )
+
 
     return ld
