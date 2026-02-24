@@ -109,18 +109,6 @@ def generate_launch_description():
     )
 
     # -----------------------------------------------------------------------
-    # LiDAR driver
-    ld.add_action(
-        Node(
-            package='lidar_driver',
-            executable='lidar_driver',
-            name='lidar_driver',
-            parameters=[workspace_config_path],
-            output='screen'
-        )
-    )
-
-    # -----------------------------------------------------------------------
     # Velocity reference from joystick
     ld.add_action(
         Node(
