@@ -52,7 +52,7 @@ public:
         // Subscriptions
         ref_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
             "/cmd_vel", 
-            rclcpp::SensorDataQoS(), 
+            rclcpp::QoS(10), 
             std::bind(&StmDriver::send_vel_twist_, this, std::placeholders::_1)
         );    
 
@@ -252,7 +252,7 @@ private:
                 constexpr size_t EXPECTED_LEN = 28; 
 
                 if (payload_.size() < EXPECTED_LEN) {
-                    RCLCPP_ERROR(this->get_logger(), "Payload troppo corto: %zu", payload_.size());
+                    RCLCPP_ERROR(this->get_logger(), "Payload too short: %zu", payload_.size());
                     break;
                 }
 
@@ -271,8 +271,8 @@ private:
                 custom_msg.pwm[0] = pwm_data[0];
                 custom_msg.pwm[1] = pwm_data[1];
 
-                RCLCPP_INFO(this->get_logger(), "V_L: %.3f | PWM_L: %u | PWM_R: %u", 
-                            custom_msg.speed[0], custom_msg.pwm[0], custom_msg.pwm[1]);
+                //RCLCPP_INFO(this->get_logger(), "V_L: %.3f | PWM_L: %u | PWM_R: %u", 
+                  //          custom_msg.speed[0], custom_msg.pwm[0], custom_msg.pwm[1]);
 
                 wheels_pub_->publish(custom_msg);
                 break;
