@@ -6,11 +6,13 @@
 
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import TimerAction
+#from launch.actions import TimerAction
 from ament_index_python.packages import get_package_share_directory
 import os
 from launch_ros.parameter_descriptions import ParameterValue
 from launch.substitutions import  Command
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 
@@ -149,4 +151,26 @@ def generate_launch_description():
             executable='joint_state_publisher'
         )
     )
+    # -----------------------------------------------------------------------
+    # Lidar    
+    ld.add_action(
+       Node(
+            package='lidar_driver',
+            executable='lidar_driver'
+        )
+    )
+# -----------------------------------------------------------------------
+    # RealSense Camera (Depth Only + Low Res Color)
+    realsense_launch_dir = os.path.join(get_package_share_directory('realsense2_camera'), 'launch')
+    
+    realsense_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(realsense_launch_dir, 'rs_launch.py')),
+        launch_arguments={
+                    'camera_name': 'realsense',
+                    'camera_namespace': 'burger',
+                    'config_file': workspace_config_path
+                }.items()
+    )
+    ld.add_action(realsense_node)
+
     return ld

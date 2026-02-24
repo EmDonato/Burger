@@ -6,12 +6,11 @@
 
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import TimerAction
+#from launch.actions import TimerAction
 from ament_index_python.packages import get_package_share_directory
 import os
 from launch_ros.parameter_descriptions import ParameterValue
 from launch.substitutions import  Command
-
 
 
 def generate_launch_description():
@@ -149,4 +148,13 @@ def generate_launch_description():
             executable='joint_state_publisher'
         )
     )
+    # -----------------------------------------------------------------------
+    # Lidar    
+    ld.add_action(
+       Node(
+            package='lidar_driver',
+            executable='lidar_driver'
+        )
+    )
+
     return ld

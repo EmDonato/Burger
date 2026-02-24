@@ -21,3 +21,15 @@ lidar_driver:
   ros__parameters:
     port: "/dev/ttyAMA0"
 
+/burger/realsense:
+  ros__parameters:
+    enable_color: false
+    depth_module.depth_profile: "640x480x30"
+    pointcloud.enable: false
+    decimation_filter.enable: true
+    align_depth.enable: false
+    enable_sync: false
+    enable_gyro: false
+    enable_accel: false
+    pointcloud.allow_no_texture_points: false
+
