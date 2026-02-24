@@ -3,7 +3,8 @@
 BURGER is a modular unicycle mobile robot platform designed for research and development in embedded control, perception, and autonomous navigation. The system combines a high-level ROS 2 computing unit with a real-time microcontroller-based motor control layer and multiple perception sensors.
 
 The platform is structured to support both real-world deployment and full simulation in Gazebo (GZ Sim).
-
+---
+![Burger Robot locandina](docs/img/myRobot.png)
 ---
 
 # 1. System Overview
@@ -165,7 +166,11 @@ Ensure:
 Launch full stack:
 
 ```
-ros2 launch stm32_nucleo_f303re_driver burger_launch.py
+ros2 launch stm32_nucleo_f303re_driver burger_launch.py (without lidar and camera)
+
+ros2 launch stm32_nucleo_f303re_driver cheese_burger_launch.py (with lidar)
+
+ros2 launch stm32_nucleo_f303re_driver becon_cheese_burger_launch.py (with lidar and camera)
 ```
 
 This will start:
@@ -176,6 +181,27 @@ This will start:
 * Teleoperation mapping
 * Robot state publisher
 
+topic list
+``` bash
+/camera/rgb/camera_info
+/camera/rgb/image_raw
+/camera/rgbd/camera_info
+/camera/rgbd/image_raw
+/clock
+/cmd_vel
+/imu
+/joint_states
+/joy
+/joy/cmd_vel
+/joy/set_feedback
+/odom
+/parameter_events
+/robot_description
+/rosout
+/scan
+/tf
+/tf_static
+```
 ---
 
 ## 6.2 Simulation
