@@ -155,7 +155,7 @@ source install/setup.bash
 # 6. Running the Robot
 
 ## 6.1 Real Robot
-
+<img src="docs/img/real_robot.jpeg" width="70%" alt="Simulazione Robot Burger">
 Ensure:
 
 * STM32 is flashed and connected
