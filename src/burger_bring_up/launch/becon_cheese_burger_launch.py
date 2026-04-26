@@ -158,8 +158,8 @@ def generate_launch_description():
             'enable_sync': True,
             'rgb_camera.color_format': 'RGB',
             'rgb_camera.enable_auto_exposure': False,
-            'rgb_camera.color_profile': '848x480x30',
-            'depth_module.depth_profile': '848x480x30',
+            'rgb_camera.color_profile': '640x480x30',
+            'depth_module.depth_profile': '640x480x30',
             'rgb_camera.exposure': 500,     
             'rgb_camera.gain': 32,       
             'rgb_camera.enable_auto_white_balance': False,
@@ -175,13 +175,12 @@ def generate_launch_description():
             'publish_tf': True,
             'depth_module.enable_auto_exposure': False,
             'decimation_filter.enable': True,
-            # Filtri depth - aggiungili ai tuoi parametri
-            'spatial_filter.enable': True,          # smoothing spaziale, riduce rumore pixel-by-pixel
-            'spatial_filter.smooth_alpha': 0.5,     # forza del filtro (0.25-1.0)
-            'spatial_filter.smooth_delta': 20,      # threshold in mm
+            'spatial_filter.enable': True,          
+            'spatial_filter.smooth_alpha': 0.5,    
+            'spatial_filter.smooth_delta': 20,     
 
-            'temporal_filter.enable': True,         # media tra frame successivi → stabilizza nel tempo
-            'temporal_filter.smooth_alpha': 0.4,    # più basso = più stabile ma più lag
+            'temporal_filter.enable': True,         
+            'temporal_filter.smooth_alpha': 0.4,    
             'temporal_filter.smooth_delta': 20,
 
             'hole_filling_filter.enable': False,
