@@ -1,0 +1,24 @@
+[0.019s] Invoking command in '/root/ws/src/build/burger_bring_up': CMAKE_PREFIX_PATH=/root/ws/src/install/burger_bring_up:/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --build /root/ws/src/build/burger_bring_up -- -j4 -l4
+[0.082s] Invoked command in '/root/ws/src/build/burger_bring_up' returned '0': CMAKE_PREFIX_PATH=/root/ws/src/install/burger_bring_up:/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --build /root/ws/src/build/burger_bring_up -- -j4 -l4
+[0.094s] Invoking command in '/root/ws/src/build/burger_bring_up': CMAKE_PREFIX_PATH=/root/ws/src/install/burger_bring_up:/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --install /root/ws/src/build/burger_bring_up
+[0.105s] -- Install configuration: ""
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch
+[0.105s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/becon_cheese_burger_launch.py
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/burger_launch.py
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/cheese_burger_launch.py
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/package_run_dependencies/burger_bring_up
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/parent_prefix_path/burger_bring_up
+[0.105s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/ament_prefix_path.sh
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/ament_prefix_path.dsv
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/path.sh
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/path.dsv
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.bash
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.sh
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.zsh
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.dsv
+[0.106s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/package.dsv
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/packages/burger_bring_up
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/cmake/burger_bring_upConfig.cmake
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/cmake/burger_bring_upConfig-version.cmake
+[0.106s] -- Up-to-date: /root/ws/src/install/burger_bring_up/share/burger_bring_up/package.xml
+[0.111s] Invoked command in '/root/ws/src/build/burger_bring_up' returned '0': CMAKE_PREFIX_PATH=/root/ws/src/install/burger_bring_up:/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --install /root/ws/src/build/burger_bring_up

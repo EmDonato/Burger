@@ -1,0 +1,62 @@
+[0.068s] Invoking command in '/root/ws/src/build/burger_bring_up': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake /root/ws/src/burger_bring_up -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/burger_bring_up
+[0.627s] -- The C compiler identification is GNU 11.4.0
+[0.932s] -- The CXX compiler identification is GNU 11.4.0
+[0.977s] -- Detecting C compiler ABI info
+[1.194s] -- Detecting C compiler ABI info - done
+[1.207s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.214s] -- Detecting C compile features
+[1.217s] -- Detecting C compile features - done
+[1.230s] -- Detecting CXX compiler ABI info
+[1.415s] -- Detecting CXX compiler ABI info - done
+[1.424s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.425s] -- Detecting CXX compile features
+[1.427s] -- Detecting CXX compile features - done
+[1.446s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.845s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.144s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[2.297s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.311s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.354s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.393s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.440s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.605s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.615s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[2.698s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[2.725s] -- Looking for pthread.h
+[2.883s] -- Looking for pthread.h - found
+[2.883s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.055s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.055s] -- Found Threads: TRUE  
+[3.235s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.457s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.464s] -- Added test 'lint_cmake' to check CMake code style
+[3.465s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.471s] -- Added test 'xmllint' to check XML markup files
+[3.480s] -- Configuring done
+[3.492s] -- Generating done
+[3.497s] -- Build files have been written to: /root/ws/src/build/burger_bring_up
+[3.511s] Invoked command in '/root/ws/src/build/burger_bring_up' returned '0': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake /root/ws/src/burger_bring_up -DCMAKE_INSTALL_PREFIX=/root/ws/src/install/burger_bring_up
+[3.515s] Invoking command in '/root/ws/src/build/burger_bring_up': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --build /root/ws/src/build/burger_bring_up -- -j4 -l4
+[3.595s] Invoked command in '/root/ws/src/build/burger_bring_up' returned '0': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --build /root/ws/src/build/burger_bring_up -- -j4 -l4
+[3.609s] Invoking command in '/root/ws/src/build/burger_bring_up': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --install /root/ws/src/build/burger_bring_up
+[3.618s] -- Install configuration: ""
+[3.619s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch
+[3.619s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/becon_cheese_burger_launch.py
+[3.621s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/burger_launch.py
+[3.622s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up//launch/cheese_burger_launch.py
+[3.622s] -- Installing: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/package_run_dependencies/burger_bring_up
+[3.622s] -- Installing: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/parent_prefix_path/burger_bring_up
+[3.622s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/ament_prefix_path.sh
+[3.623s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/ament_prefix_path.dsv
+[3.623s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/path.sh
+[3.623s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/environment/path.dsv
+[3.624s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.bash
+[3.624s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.sh
+[3.624s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.zsh
+[3.624s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/local_setup.dsv
+[3.625s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/package.dsv
+[3.625s] -- Installing: /root/ws/src/install/burger_bring_up/share/ament_index/resource_index/packages/burger_bring_up
+[3.626s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/cmake/burger_bring_upConfig.cmake
+[3.626s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/cmake/burger_bring_upConfig-version.cmake
+[3.627s] -- Installing: /root/ws/src/install/burger_bring_up/share/burger_bring_up/package.xml
+[3.630s] Invoked command in '/root/ws/src/build/burger_bring_up' returned '0': CMAKE_PREFIX_PATH=/root/ws/install/joy_service_node:/root/ws/install/stm32_nucleo_f303re_driver:/root/ws/install/robot_descriptor:/root/ws/install/realsense2_rviz_plugin:/root/ws/install/realsense2_description:/root/ws/install/realsense2_camera:/root/ws/install/realsense2_camera_msgs:/root/ws/install/realsense2_ros_mqtt_bridge:/opt/ros/humble:/root/ws/install/module3_driver:/root/ws/install/lidar_driver:/root/ws/install/joy_teleop_twist_ref /usr/bin/cmake --install /root/ws/src/build/burger_bring_up

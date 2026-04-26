@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>module3_driver</name>
+  <version>0.0.0</version>
+  <description>Camera Module 3 ROS2 driver</description>
+
+  <maintainer email="you@todo.todo">you</maintainer>
+  <license>TODO</license>
+
+  <!-- build -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- dependencies -->
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>image_transport</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

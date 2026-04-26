@@ -4,6 +4,8 @@
 #include "geometry_msgs/msg/twist.hpp"
 #include "geometry_msgs/msg/vector3.hpp"
 #include "sensor_msgs/msg/magnetic_field.hpp"
+#include "sensor_msgs/msg/joint_state.hpp"
+
 #include "std_msgs/msg/bool.hpp"
 #include "stm32_nucleo_f303re_driver/srv/cmd.hpp"
 #include "geometry_msgs/msg/twist_stamped.hpp"
@@ -42,6 +44,8 @@ public:
         // Publishers initialization
         imu_pub_ = create_publisher<sensor_msgs::msg::Imu>("imu", rclcpp::SensorDataQoS());
         enc_pub_ = create_publisher<geometry_msgs::msg::TwistStamped>("enc/twist_meas", rclcpp::SensorDataQoS());
+        joint_pub_ = create_publisher<sensor_msgs::msg::JointState>("/joint_states", 10);
+
         wheels_pub_ = create_publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>("enc/twist_wheels", rclcpp::SensorDataQoS());
         mag_pub_ = create_publisher<sensor_msgs::msg::MagneticField>("magnetometer", rclcpp::SensorDataQoS());
         
@@ -93,9 +97,15 @@ private:
     uint8_t checksum_{0};
     std::vector<uint8_t> payload_;
 
+    float theta_wheel_joint_left_ = 0.0;
+    float theta_wheel_joint_right_ = 0.0;
+    float dt_enc_ = 0.05;
+
     // ROS 2 Interfaces
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
     rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr mag_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_pub_;
+
     rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr enc_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr arm_pub_;
     rclcpp::Publisher<stm32_nucleo_f303re_driver::msg::Wheelspeed>::SharedPtr wheels_pub_;
@@ -235,6 +245,17 @@ private:
                 imu.angular_velocity.x = d[6];
                 imu.angular_velocity.y = d[7];
                 imu.angular_velocity.z = d[8];
+
+                imu.angular_velocity_covariance = {
+                    1.28e-6, 0, 0,
+                    0, 1.13e-6, 0,
+                    0, 0, 1.38e-6
+                };
+                imu.linear_acceleration_covariance = {
+                    2.43e-4, 2.81e-5, 1.43e-5,
+                    2.81e-5, 1.82e-4, 1.52e-5,
+                    1.43e-5, 1.52e-5, 1.80e-4
+                };
                 imu_pub_->publish(imu);
 
                 auto mag = sensor_msgs::msg::MagneticField();
@@ -267,9 +288,19 @@ private:
 
                 custom_msg.speed[0] = f_data[2] * 2 * M_PI * radius / 60.0;
                 custom_msg.speed[1] = f_data[3] * 2 * M_PI * radius / 60.0;
-
+                theta_wheel_joint_left_ += custom_msg.speed[0] * dt_enc_;
+                theta_wheel_joint_right_ += custom_msg.speed[1] * dt_enc_;
                 custom_msg.pwm[0] = pwm_data[0];
                 custom_msg.pwm[1] = pwm_data[1];
+
+                sensor_msgs::msg::JointState joint_msg;
+                joint_msg.header.stamp = this->now();
+
+                joint_msg.name = {"left_wheel_joint", "right_wheel_joint"};
+                joint_msg.position = {theta_wheel_joint_left_, theta_wheel_joint_right_};
+                joint_msg.velocity = {custom_msg.speed[0] , custom_msg.speed[1]};
+
+                joint_pub_->publish(joint_msg);
 
                 //RCLCPP_INFO(this->get_logger(), "V_L: %.3f | PWM_L: %u | PWM_R: %u", 
                   //          custom_msg.speed[0], custom_msg.pwm[0], custom_msg.pwm[1]);

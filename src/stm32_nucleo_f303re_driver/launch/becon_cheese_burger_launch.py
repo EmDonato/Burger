@@ -133,26 +133,35 @@ def generate_launch_description():
             output='screen'
         )
     )
+    ld.add_action(
+        Node(
+            package='module3_driver',
+            executable='module3',
+            name='moule3',
+            output='screen'
+        )
+    )
 
     # -----------------------------------------------------------------------
     # Robot state publisher
 
-    ld.add_action(
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{'robot_description': robot_description}],
-            output='screen'
-        )
-    )
-    ld.add_action(
-       Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher'
-        )
-    )
+    #ld.add_action(
+    #    Node(
+    #        package='robot_state_publisher',
+    #        executable='robot_state_publisher',
+    #        parameters=[{'robot_description': robot_description}],
+    #        output='screen'
+    #    )
+    #)
+    #ld.add_action(
+    #   Node(
+    #        package='joint_state_publisher',
+    #        executable='joint_state_publisher'
+    #    )
+    #)
 
 # -----------------------------------------------------------------------
+    # RealSense Camera (Depth Only + Low Res Color)
     # RealSense Camera (Depth Only + Low Res Color)
     realsense_node = Node(
         package='realsense2_camera',
@@ -160,10 +169,14 @@ def generate_launch_description():
         name='realsense',
         namespace='burger',
         parameters=[{
-            'enable_color': False,
+            'enable_color': True,
             'enable_depth': True,
+            'enable_sync': True,
+            'rgb_camera.color_format': 'RGB',
+            'rgb_camera.enable_auto_exposure': False,
+            'rgb_camera.color_profile': '640x480x30',
             'depth_module.depth_profile': '640x480x30',
-            'align_depth.enable': False,
+            'align_depth.enable': True,
             'pointcloud.enable': False,
             'enable_infra': False,
             'enable_infra1': False,
@@ -171,11 +184,19 @@ def generate_launch_description():
             'pointcloud.allow_no_texture_points': False,
             'enable_gyro': False,
             'enable_accel': False,
+            'depth_module.enable_auto_exposure': False,
             'decimation_filter.enable': True,
+            # QoS Best Effort
+            'color_qos': 'SENSOR_DATA',
+            'depth_qos': 'SENSOR_DATA',
+            'depth_registered_qos': 'SENSOR_DATA',
         }],
         output='screen'
     )
 
+
+
     ld.add_action(realsense_node)
 
+    #ld.add_action(depth_compressor)
     return ld
