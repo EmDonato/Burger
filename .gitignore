@@ -2,3 +2,15 @@
 /install
 /log
 /Log
+build/
+install/
+log/
+src/build/
+src/install/
+Log/
+*.db3
+*.bag
+core
+core.*
+src/core
+
