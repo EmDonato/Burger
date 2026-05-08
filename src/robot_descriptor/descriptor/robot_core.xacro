@@ -49,7 +49,7 @@
   </material>
 
   <material name="green">
-    <color rgba="0 0.8 0 0.95"/>
+    <color rgba="0 0.8 0 1"/>
   </material>
 
   <material name="grey">
@@ -135,7 +135,7 @@
     <update_rate>100</update_rate>
     <visualize>true</visualize>
     <topic>imu</topic>
-    <ignition_frame_id>imu</ignition_frame_id>
+    <gz_frame_id>imu</gz_frame_id>
     <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
     </plugin>
     <imu>

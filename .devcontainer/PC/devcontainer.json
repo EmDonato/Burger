@@ -1,0 +1,40 @@
+{
+  "name": "ROS2 humble_PC",
+
+  "build": {
+    "dockerfile": "../../docker/PC/Dockerfile",
+    "context": ".."
+  },
+
+  "workspaceFolder": "/workspace",
+
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+
+  "runArgs": [
+    "--net=host",
+    "--ipc=host",
+
+    "--gpus=all",
+
+    "--device=/dev/dri",
+
+    "-e", "DISPLAY=${localEnv:DISPLAY}",
+    "-e", "QT_X11_NO_MITSHM=1",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+  ],
+
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.cpptools"
+      ]
+    }
+  }
+}

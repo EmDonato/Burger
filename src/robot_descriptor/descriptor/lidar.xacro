@@ -33,7 +33,7 @@
         <update_rate>10</update_rate>
         <visualize>false</visualize>
         <topic>scan</topic>
-        <ignition_frame_id>laser_frame</ignition_frame_id>
+        <gz_frame_id>laser_frame</gz_frame_id>
         <lidar>
 
         <scan>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>depth_decompressor</name>
+  <version>0.0.0</version>
+  <description>Depth decompression node</description>
+
+  <maintainer email="mcf.donato@gmail.com">genesis</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+
+  <exec_depend>opencv</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

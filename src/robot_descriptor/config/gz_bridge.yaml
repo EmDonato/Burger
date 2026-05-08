@@ -18,6 +18,7 @@
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
+  ros_gz_frame_id: "laser_frame"
 
 # Camera rgb
 - ros_topic_name: "camera/rgb/image_raw"
@@ -25,12 +26,14 @@
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
+  ros_gz_frame_id: "camera_rgb_optical_link"
 
 - ros_topic_name: "camera/rgb/camera_info"
   gz_topic_name: "camera/rgb/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
+  ros_gz_frame_id: "camera_rgb_optical_link"
 
 # Camera rgbd
 - ros_topic_name: "camera/rgbd/image_raw"
@@ -38,14 +41,16 @@
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
+  ros_gz_frame_id: "camera_rgb_optical_link"
 
 - ros_topic_name: "camera/rgbd/camera_info"
   gz_topic_name: "camera/rgbd/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
+  ros_gz_frame_id: "camera_rgb_optical_link"
 
-  # Cmd Vel
+# Cmd Vel
 - ros_topic_name: "cmd_vel"
   gz_topic_name: "cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
@@ -66,10 +71,10 @@
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
 
-  # PointCloud RGB-D
+# PointCloud RGB-D
 - ros_topic_name: "camera/points"
   gz_topic_name: "camera/rgbd/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
-
+  ros_gz_frame_id: "camera_rgb_optical_link"
