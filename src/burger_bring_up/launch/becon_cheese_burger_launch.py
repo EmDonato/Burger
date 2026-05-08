@@ -69,7 +69,7 @@ def generate_launch_description():
             name='teleop_twist_joy',
             parameters=[{
                 'require_enable_button': True,
-                'enable_button': 5,
+                'enable_button': 10,
                 'enable_turbo_button': -1,
                 'axis_linear.x': 1,
                 'axis_linear.y': 2,
@@ -174,7 +174,7 @@ def generate_launch_description():
             'enable_accel': False,
             'publish_tf': True,
             'depth_module.enable_auto_exposure': False,
-            'decimation_filter.enable': True,
+            'decimation_filter.enable': False,
             'spatial_filter.enable': True,          
             'spatial_filter.smooth_alpha': 0.5,    
             'spatial_filter.smooth_delta': 20,     
