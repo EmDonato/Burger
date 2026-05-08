@@ -3,6 +3,8 @@ stm32_nucleo_f303re_driver:
     port: "/dev/ttyACM0"
     baudrate: 115200
     frequency_ms: 5
+    radius: 0.0346f 
+    wheel_base: 0.2
     
 joy_teleop_twist_ref:
   ros__parameters:

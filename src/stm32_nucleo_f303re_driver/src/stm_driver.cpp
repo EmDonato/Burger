@@ -34,6 +34,12 @@ public:
         this->get_parameter("port", port_);
         this->get_parameter("baudrate", baudrate_);
 
+        this->declare_parameter("wheel_base", 0.2f);
+        this->declare_parameter("radius", 0.0346f );
+
+        this->get_parameter("radius", radius);
+        this->get_parameter("wheel_base", wheel_base);
+
         try {
             open_serial_();
         } catch (const std::exception &e) {
@@ -89,7 +95,8 @@ private:
     pollfd pfd_{};
     uint8_t tmp_buf_[128];
     boost::circular_buffer<uint8_t> rx_buffer_{512};
-    float radius = 0.0346f ;
+    float radius;
+    float wheel_base;
     // Parser State Machine
     ParseState state_{ParseState::WAIT_HEADER1};
     uint8_t msg_type_{0};
@@ -269,7 +276,7 @@ private:
             }
 
             case ENC_ID:
-            {    
+            {   
                 constexpr size_t EXPECTED_LEN = 28; 
 
                 if (payload_.size() < EXPECTED_LEN) {
@@ -284,24 +291,29 @@ private:
                 std::memcpy(pwm_data, payload_.data() + 4 + (4 * sizeof(float)), 2 * sizeof(uint32_t));
 
                 auto custom_msg = stm32_nucleo_f303re_driver::msg::Wheelspeed();
-                custom_msg.header.stamp = this->now();
+                auto meas_msg = geometry_msgs::msg::TwistStamped();
 
+                custom_msg.header.stamp = this->now();
+                meas_msg.header.stamp = this->now();
                 custom_msg.speed[0] = f_data[2] * 2 * M_PI * radius / 60.0;
                 custom_msg.speed[1] = f_data[3] * 2 * M_PI * radius / 60.0;
-                theta_wheel_joint_left_ += custom_msg.speed[0] * dt_enc_;
-                theta_wheel_joint_right_ += custom_msg.speed[1] * dt_enc_;
+                theta_wheel_joint_left_ += f_data[2] * dt_enc_;
+                theta_wheel_joint_right_ += f_data[3] * dt_enc_;
                 custom_msg.pwm[0] = pwm_data[0];
                 custom_msg.pwm[1] = pwm_data[1];
+                meas_msg.twist.linear.x = (custom_msg.speed[1] + custom_msg.speed[0])/2;
+                meas_msg.twist.angular.z = (custom_msg.speed[1] - custom_msg.speed[0])/wheel_base;
 
                 sensor_msgs::msg::JointState joint_msg;
+
                 joint_msg.header.stamp = this->now();
 
                 joint_msg.name = {"left_wheel_joint", "right_wheel_joint"};
                 joint_msg.position = {theta_wheel_joint_left_, theta_wheel_joint_right_};
                 joint_msg.velocity = {custom_msg.speed[0] , custom_msg.speed[1]};
 
+                enc_pub_->publish(meas_msg);
                 joint_pub_->publish(joint_msg);
-
                 //RCLCPP_INFO(this->get_logger(), "V_L: %.3f | PWM_L: %u | PWM_R: %u", 
                   //          custom_msg.speed[0], custom_msg.pwm[0], custom_msg.pwm[1]);
 
