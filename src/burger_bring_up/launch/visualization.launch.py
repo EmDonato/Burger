@@ -68,5 +68,10 @@ def generate_launch_description():
             executable='depth_decompressor_node',
             output='screen'
         ),
-
+        # LLM node
+        Node(
+            package="ollama",
+            executable="ollama_node",
+            output="screen",
+        )
     ])
