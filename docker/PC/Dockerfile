@@ -68,7 +68,8 @@ RUN pip3 install --no-cache-dir \
     mcap-ros2-support \
     rosbags \
     spatialmath-python \
-    jupyterlab
+    jupyterlab \
+    nicegui
 
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
