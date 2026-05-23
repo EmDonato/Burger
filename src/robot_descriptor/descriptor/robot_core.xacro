@@ -34,14 +34,14 @@
   </material>
 
   <material name="blue">
-    <color rgba="0.2 0.2 1 0.9"/>
+    <color rgba="0.2 0.2 1 1"/>
   </material>
 
   <material name="black">
-    <color rgba="0 0 0 0.9"/>
+    <color rgba="0 0 0 0.99"/>
   </material>
  <material name="light_black">
-    <color rgba="0.1 0.1 0.1 0.999"/>
+    <color rgba="0.1 0.1 0.1 1"/>
   </material>
 
   <material name="red">
@@ -53,7 +53,7 @@
   </material>
 
   <material name="grey">
-    <color rgba="0.647 0.647 0.647 0.95"/>
+    <color rgba="0.647 0.647 0.647 1"/>
   </material>
 
   <!-- ================= BASE LINK ================= -->
@@ -83,7 +83,7 @@
     <visual>
       <origin xyz="0 0.0035 0" rpy="1.5708 0 1.5708"/>
       <geometry>
-        <mesh filename="package://robot_descriptor/meshes/chassis.stl"
+        <mesh filename="package://robot_descriptor/meshes/chassis_main.stl"
               scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light_black"/>

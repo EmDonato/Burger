@@ -69,9 +69,9 @@ def generate_launch_description():
             output='screen'
         ),
         # LLM node
-        Node(
-            package="ollama",
-            executable="ollama_node",
-            output="screen",
-        )
+        #Node(
+        #    package="ollama",
+        #    executable="ollama_node",
+        #    output="screen",
+        #)
     ])
