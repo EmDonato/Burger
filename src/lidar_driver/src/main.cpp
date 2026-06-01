@@ -18,7 +18,7 @@ public:
         // ======================
         // Parameters
         // ======================
-        this->declare_parameter<std::string>("port", "/dev/ttyAMA0");
+        this->declare_parameter<std::string>("port", "/dev/ttyUSB0");
         this->get_parameter("port", port_name_);
 
         RCLCPP_INFO(

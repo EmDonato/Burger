@@ -3,11 +3,11 @@
 
     <joint name="laser_joint" type="fixed">
         <parent link="base_link"/>
-        <child link="laser_frame"/>
+        <child link="laser_link"/>
         <origin xyz="0.075 0 ${wheel_radius+0.181}" rpy="0 3.14159265359 1.57079"/>
     </joint>
 
-    <link name="laser_frame">
+    <link name="laser_link">
         <visual>
             <origin xyz="0.0035 -0.0 0.041" rpy=" -1.57079  0   3.14159265359"/>
             <geometry>
@@ -23,7 +23,7 @@
 
 
 
-    <gazebo reference="laser_frame">
+    <gazebo reference="laser_link">
     <material>Gazebo/Black</material>
     <self_collide>false</self_collide>
 
@@ -33,7 +33,7 @@
         <update_rate>10</update_rate>
         <visualize>false</visualize>
         <topic>scan</topic>
-        <gz_frame_id>laser_frame</gz_frame_id>
+        <gz_frame_id>laser_link</gz_frame_id>
         <lidar>
 
         <scan>
