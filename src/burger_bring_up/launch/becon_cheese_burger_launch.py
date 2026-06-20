@@ -191,8 +191,22 @@ def generate_launch_description():
         }],
         output='screen'
     )
-
-
+    ld.add_action(
+        Node(
+            package='pipe_tts',
+            executable='voice_tts',
+            name='voice_tts',
+            output='screen'
+        )
+    )
+    ld.add_action(
+        Node(
+            package='ekf',
+            executable='ekf_node',
+            name='ekf',
+            output='screen'
+        )
+    )
 
     ld.add_action(realsense_node)
 

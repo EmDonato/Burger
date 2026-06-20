@@ -26,26 +26,9 @@ def generate_launch_description():
         value_type=str
     )
 
-    # ================= FOXGLOVE BRIDGE =================
-    foxglove_bridge_launch = IncludeLaunchDescription(
-        AnyLaunchDescriptionSource(
-            os.path.join(
-                get_package_share_directory('foxglove_bridge'),
-                'launch',
-                'foxglove_bridge_launch.xml'
-            )
-        ),
-        launch_arguments={
-            'port': '8774',
-            'address': '0.0.0.0'
-        }.items()
-    )
 
     # ================= NODES =================
     return LaunchDescription([
-
-        # Foxglove bridge
-        #foxglove_bridge_launch,
 
         # Robot state publisher
         Node(
@@ -69,9 +52,16 @@ def generate_launch_description():
             output='screen'
         ),
         # LLM node
-        #Node(
-        #    package="ollama",
-        #    executable="ollama_node",
-        #    output="screen",
-        #)
+        Node(
+            package="ollama",
+            executable="ollama_node",
+            output="screen",
+        ),
+        # GUI node
+        Node(
+            package="burghy_gui_pkg",
+            executable="burghy_gui_node",
+            output="screen",
+        )
+           
     ])
