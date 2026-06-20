@@ -7,6 +7,7 @@
 
 #include "cmd_interface_linux.h"
 #include "lipkg.h"
+#include <limits>
 
 class LidarDriver : public rclcpp::Node
 {
@@ -121,8 +122,12 @@ private:
         for (size_t i = 0; i < count; ++i) {
             msg.ranges[i] = scan.ranges[i];
             msg.intensities[i] = scan.intensities[i];
+            
         }
-
+        for (int i = 114; i <= 122; i++)
+        {
+            msg.ranges[i] = std::numeric_limits<float> ::quiet_NaN();
+        }
         msg.scan_time = scan.scan_time;                 
         msg.time_increment = msg.scan_time / count;     
 
