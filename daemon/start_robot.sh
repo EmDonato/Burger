@@ -1,4 +1,7 @@
 #!/bin/bash
+ 
+
+#TODO CHANGE
 
 set -e
 
@@ -9,7 +12,7 @@ IMAGE_NAME="vsc-burger-4742daa97fb39e6f564bf2e529b7c2b0ad4226b23c015641ffa8d8c0c
 WORKSPACE="/home/ema/Desktop/burger"
 
 # --------------------------------------------------
-# 1. Attesa Docker (robusto)
+# 1. Attesa Docker 
 # --------------------------------------------------
 echo "[BURGER] Waiting for Docker..."
 
@@ -22,14 +25,13 @@ for i in {1..10}; do
     sleep 2
 done
 
-# Se docker non è pronto → errore
 if ! docker info > /dev/null 2>&1; then
     echo "[ERROR] Docker not available"
     exit 1
 fi
 
 # --------------------------------------------------
-# 2. Cleanup container vecchio (se esiste)
+# 2. Cleanup old container v
 # --------------------------------------------------
 if docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
     echo "[BURGER] Removing old container"
@@ -37,7 +39,7 @@ if docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
 fi
 
 # --------------------------------------------------
-# 3. Avvio container + ROS2 (PROCESSO PRINCIPALE)
+# 3. start container
 # --------------------------------------------------
 echo "[BURGER] Starting container"
 
@@ -61,4 +63,3 @@ exec docker run \
         ros2 launch stm32_nucleo_f303re_driver becon_cheese_burger_launch.py
     "
 
-# NON ARRIVA QUI (exec sostituisce il processo)

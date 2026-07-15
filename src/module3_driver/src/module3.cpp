@@ -9,7 +9,7 @@
 #include <atomic>
 #include <mutex>
 #include <cstring>
-//THAT'S SHIT
+//THAT'S SHIT OLD
 using namespace std::chrono_literals;
 
 class Module3 : public rclcpp::Node {
