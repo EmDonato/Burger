@@ -1,3 +1,0 @@
-○ vncserver-x11-serviced.service - VNC Server in Service Mode daemon
-     Loaded: loaded (]8;;file://pi5/lib/systemd/system/vncserver-x11-serviced.service/lib/systemd/system/vncserver-x11-serviced.service]8;;; [0;1;38;5;185mdisabled[0m; preset: [0;1;32menabled[0m)
-     Active: inactive (dead)

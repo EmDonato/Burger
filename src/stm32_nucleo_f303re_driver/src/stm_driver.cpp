@@ -295,12 +295,35 @@ private:
 
                 custom_msg.header.stamp = this->now();
                 meas_msg.header.stamp = this->now();
-                custom_msg.speed[0] = f_data[2] * 2 * M_PI * radius / 60.0;
-                custom_msg.speed[1] = f_data[3] * 2 * M_PI * radius / 60.0;
-                theta_wheel_joint_left_ += f_data[2] * dt_enc_;
-                theta_wheel_joint_right_ += f_data[3] * dt_enc_;
-                custom_msg.pwm[0] = pwm_data[0];
+                const double omega_left =
+                static_cast<double>(f_data[2]) * 2.0 * M_PI / 60.0;
+
+                const double omega_right =
+                static_cast<double>(f_data[3]) * 2.0 * M_PI / 60.0;
+
+                const double velocity_left = omega_left * radius;
+                const double velocity_right = omega_right * radius;
+
+                theta_wheel_joint_left_ += omega_left * dt_enc_;
+                theta_wheel_joint_right_ += omega_right * dt_enc_;
+
+                custom_msg.speed[0] = velocity_left; //m/s
+                custom_msg.speed[1] = velocity_right;
+                custom_msg.pwm[0] = pwm_data[0]; //PWM
                 custom_msg.pwm[1] = pwm_data[1];
+                joint_msg.name = {
+                "left_wheel_joint",
+                "right_wheel_joint"
+                };
+                joint_msg.position = {
+                theta_wheel_joint_left_, //rad
+                theta_wheel_joint_right_
+                };
+
+                joint_msg.velocity = {
+                omega_left,
+                omega_right //rad/s
+                };
                 meas_msg.twist.linear.x = (custom_msg.speed[1] + custom_msg.speed[0])/2;
                 meas_msg.twist.angular.z = (custom_msg.speed[1] - custom_msg.speed[0])/wheel_base;
 

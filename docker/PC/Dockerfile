@@ -81,5 +81,5 @@ RUN . /opt/ros/humble/setup.sh && \
 RUN echo "source /root/ws/install/setup.bash" >> ~/.bashrc
 
 
-ENTRYPOINT ["/ros_entrypoint.sh"]
+ENTRYPOINT ["/PC_entrypoint.sh"]
 CMD ["bash"]

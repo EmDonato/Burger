@@ -1,0 +1,22 @@
+# ROS build
+/build/
+/install/
+/log/
+/Firmware
+
+# IDE
+.vscode/
+
+# Git
+.git/
+
+# Python
+__pycache__/
+*.pyc
+
+# File temporanei
+*.swp
+*.tmp
+
+# Ambiente
+.env

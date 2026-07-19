@@ -1,0 +1,31 @@
+services:
+  ros2_pc:
+    container_name: Burger_server_PC
+
+    build:
+      context: ../..
+      dockerfile: docker/PC/Dockerfile
+
+    working_dir: /workspace
+
+    volumes:
+      - ../..:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+    network_mode: host
+    ipc: host
+
+    gpus: all
+
+    devices:
+      - /dev/dri:/dev/dri
+
+    environment:
+      DISPLAY: ${DISPLAY}
+      QT_X11_NO_MITSHM: "1"
+      NVIDIA_DRIVER_CAPABILITIES: all
+
+    stdin_open: true
+    tty: true
+
+    command: sleep infinity
